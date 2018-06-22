@@ -1,0 +1,555 @@
+'Official' naming by apple, extracted from fsck_apfs
+
+fs extentref tree
+fs omap oid
+fs root tree
+fs snap meta tree
+omap
+omap checkpoint
+spaceman IP bitmap block
+spaceman IP bitmap
+omap om_flags
+omap om_snap_count
+omap om_tree_type
+omap om_snapshot_tree_type
+omap om_snapshot_tree_oid
+omap om_most_recent_snap
+omap om_pending_revert_min
+omap om_pending_revert_max
+omap entry ok_xid
+omap entry ov_flags
+omap entry ov_size
+omap entry ov_paddr
+omap snapshot key
+omap snapshot oms_flags
+omap snapshot oms_pad
+
+
+###################################################################
+
+	entries
+
+###################################################################
+
+object physical extent record key len ?
+object physical extent record val len ?
+object physical extent record length
+object physical extent owning_obj_id
+object physical extent range ?
+object physical extent refcount
+object physical dstream record key len
+object physical dstream record val len
+fext_key key len // fext: file extent
+fext_val val len // fext: file extent
+fext_val physical file extent record len // fext: file extent
+fext_val flags // fext: file extent
+fe_val crypto_id
+inode_key length
+inode_key hdr.obj_id
+inode_val length
+inode_val type
+inode_val parent_id
+inode_val nchildren
+inode_val nlink
+inode_val internal_flags
+inode_val internal_flags
+inode_val internal_flags
+inode_val default_protection_class
+inode_val bsd_flags
+inode_val pad1
+inode_val pad2
+inode_val xfields
+crypto_key length
+crypto_key hdr.obj_id
+crypt_val refcnt
+crypt_val state.major_version
+crypt_val state.minor_version
+crypt_val state.cpflags
+crypt_val state.persistent_class
+crypt_val state.key_os_version
+crypt_val state.key_revision
+crypt_val state.key_len
+crypt_val length
+xattr_key length
+xattr_key hdr.obj_id
+xattr_key name_len
+xattr_key length
+xattr_key name
+xattr_val length
+xattr_val flags
+xattr_val xdata_len
+xattr_val length
+xattr_val xattr_obj_id
+xattr_val dstream
+drec_key length
+drec_key hdr.obj_id
+drec_key name_len
+drec_key length
+drec_key name
+drec_val length
+drec_val file_id
+drec_val flags
+drec_val type
+drec_val xfields
+sibling_map_key length 
+sibling_map_val length
+sibling_map_key hdr.obj_id
+sibling_val file_id
+sibling_key length
+sibling_key sibling_id
+sibling_val length
+sibling_val parent_id
+dir_stats_key length
+dir_stats_key hdr.obj_id
+dir_stats_val length
+dir_stats_val chained_key
+dir_stats_val gen_count
+snap_metadata_key length
+snap_metadata_key hdr.obj_id
+snap_metadata_val length
+snap_metadata_val extentref
+snap_metadata_val sblock
+snap_metadata_val inum
+snap_metadata_val extentref 
+snap_metadata_val flags
+snap_metadata_val name_len
+snap_metadata_val length
+snap_metadata_val name
+snap_name_key length
+snap_name_key hdr.obj_id
+snap_name_key name_len
+snap_name_key length
+snap_name_key name
+snap_name_key snap_xid
+xf xf_len
+xf xf_num_exts
+xf xf_used_data
+xf xf_type
+xf doc_id
+xf name
+xf dstream
+xf dir_stats_key
+xf uuid
+xf sparse_bytes
+fusion middle tree key length
+fusion middle tree value length
+fusion middle tree from range
+fusion middle tree to range
+fusion wbc stable head offset
+fusion wbc list IOD
+fusion wbc list head OID
+fusion wbc list tail OID
+fusion wbc list object OID
+fusion wbc list chunk max entries
+fusion wbc list chunk first index
+fusion wbc list chunk last index
+fusion wbc list entry WBC range
+fusion wbc list entry target range
+fusion wbc list chunk tailOffset
+
+
+###################################################################
+
+	btree
+
+###################################################################
+
+btree node child_id
+btree node key
+btree node val
+node parent (empty for root)
+node level (root node level is max node level in tree, 0 for leaves)
+table space offset
+table space length
+free space offset
+free space extents
+key count
+btree
+	TOC
+	keys (sorted)
+	vals
+key free list space
+key free list head
+val free list space
+val free list head
+key free list entry
+key free list entry len
+key free list entry extends
+node kv size (fixed, variable)
+tree key size (fixed, variable)
+tree kv size (fixed)
+leaf kv size (variable)
+key size
+key location
+key entry
+val size
+val location
+val entry
+reap list object record count
+reap list object first index
+reap list object last index
+reap list object free index
+reaper list entry
+
+omap tree
+snapmeta tree (or snapshot metadata tree)
+extentref tree
+gbitmap tree
+
+SnapMetadata
+PhysExtent
+CryptoState
+DirRecord
+FileExtent
+DstreamID
+SiblingLink
+SiblingMap
+DirSize
+SnapName
+
+
+crypto state refcount
+logical extent
+
+checkpoint descriptor area
+checkpoint data area
+spaceman internal pool bitmap area
+
+spaceman block size 
+nx superblock block size
+spaceman blocks per chunk
+spaceman chunks per cib
+spaceman cibs per cab
+spaceman block count
+nx superblock block count
+spaceman chunk count
+spaceman cib count
+spaceman cab count
+spaceman free count
+spaceman tier2 chunk count
+spaceman tier2 cib count
+spaceman tier2 cab count
+spaceman tier2 free count
+spaceman IP block count
+spaceman IP bm block count
+spaceman IP bitmap block count
+spaceman IP bm base address
+spaceman IP base address
+spaceman IP bitmap block xid
+spaceman IP bitmap block index
+spaceman IP bitmap block
+spaceman IP bitmap free blocks
+spaceman IP bitmap free head
+spaceman IP bitmap free next
+spaceman IP bitmap next array free count
+spaceman IP bitmap free list
+spaceman IP free queue count
+spaceman IP free queue tree
+spaceman IP free queue tree entry xid
+spaceman IP free queue tree entries
+spaceman IP free queue tree entry addr
+spaceman IP block index for spaceman IP free queue tree entry
+spaceman IP free queue tree entry end addr
+spaceman IP end block index 
+spaceman IP free queue tree entry
+spaceman IP free queue tree
+spaceman IP free queue count
+spaceman chunk info block addr
+spaceman IP block index 
+spaceman chunk info block
+spaceman cib xid
+spaceman cib index
+spaceman cib chunk info
+spaceman cib cib_chunk_info_count
+spaceman cib chunk info xid
+spaceman cib chunk info addr
+spaceman cib chunk info block count
+spaceman cib chunk info free count
+spaceman cib ci bm addr
+spaceman free count
+spaceman IP free block count
+spaceman free queue count
+spaceman free queue tree
+spaceman free queue tree sanity check
+spaceman free queue tree entry
+spaceman free queue tree entries
+spaceman free queue count
+
+
+omap xid
+spaceman xid
+
+snap meta tree
+omap tree
+omap snapshot tree
+omap snapshot count
+omap tree xid
+omap tree sanity check failed
+omap tree entries
+omap entry xid
+omap entry flags
+omap entry marks
+omap entry beyond
+omap entry size
+omap entry addr
+omap tree type
+omap snapshot tree xid
+omap snapshot tree
+omap snapshot count
+omap snapshot tree type
+
+reap list object max record count
+reap list object record count
+reap list object first index
+reap list object last index
+reap list object free index
+reap list tail
+
+checkpoint descriptor block
+
+superblock block size
+superblock block count
+superblock checkpoint descriptor block count
+superblock checkpoint data block count
+superblock checkpoint descriptor base address
+superblock checkpoint data base address
+
+xid checkpoint superblock index
+
+container block size
+superblock block size
+superblock container size
+
+checkpoint descriptor index
+checkpoint descriptor block
+
+checkpoint descriptor map block
+checkpoint descriptor data block
+spaceman oid
+spaceman IP free queue tree OID
+spaceman tier2 free queue tree OID
+
+omap oid
+reaper oid
+fs[%d] oid
+btn_btree.bt_fixed.bt_flags
+btn_btree.bt_fixed.bt_node_size
+btn_btree.bt_fixed.bt_key_size
+btn_btree.bt_fixed.bt_val_size
+btn_btree.bt_longest_key
+btn_btree.bt_longest_val
+btn_btree.bt_key_count
+btn_btree.bt_node_count
+btn_table_space.len
+btn_nkeys
+btn_table_space
+btn_key_free_list
+btn_key_free_list offset
+btn_key_free_list entry
+btn_key_free_list length
+btn_val_free_list offset
+btn_val_free_list entry
+btn_val_free_list length
+btn_free_space
+btn_btree.bt_key_count
+btn_btree.bt_node_count
+btn_btree.bt_fixed.bt_node_size
+
+mt_flags
+mt_btflags
+mt_node_size
+mt_max_levels
+mt_key_size
+mt_val_size
+mt_pad
+mt_level_count
+mt_merging
+mt_merge_key_len
+
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x dirty object on the free list?!
+%s%s%s%s%s%lld:%d
+DELETE 
+SAVED 
+ENCRYPTED 
+NOHEAD 
+flags 0x%x%s%s oid %lld
+ DELETED
+ REVERTED
+
+main free queue tree
+tier2 free queue tree
+
+nx checkpoint desc range
+nx checkpoint data range
+spaceman ip bitmap range
+spaceman ip range
+nx keylocker range
+tier2 nx superblock range
+fusion WBC range
+
+spaceman free tree extent
+WBC checkpoint
+Fusion WBC state
+Fusion Middle Tree
+
+Unknown type %d
+%d%d-%d
+vers: %u.%u flags: %#x class: %c os: 
+ revision: %u key len: %u
+obj-id: %8lld type: %-11s
+refcnt %d len %lld owning_obj_id %lld
+num children: %lld total size: %lld gen-count: %lld
+ chained-key: %lld
+private-id: %lld parent-id: %lld cr/mtime: %lld/%lld 
+gen-count: %u nchildren: %d 
+nlink: %d 
+def-prot-class: %d 
+pad1: 0x%x 
+pad2: 0x%llx 
+uid/gid/mode: %d/%d/0x%x bsd_flags: 0x%x internal_flags: 0x%llx name: %s
+NO-NAME
+refcnt: %d 
+file-id: %6lld flags: %d date-added: %lld hash: 0x%x name-len: %d name: %s
+file-id: %6lld flags: %d date-added: %lld name-len: %d name: %s
+sib-id: %lld parent-id: %lld name: %s
+sib-map: %lld
+logical addr: %lld  phys-block-num: %lld  crypto-id: %lld
+flags: 0x%x data-len: %d name: %s
+ out-of-line data size: %lld (under obj-id: %lld / crypto-id: %lld)
+ embedded data size: %d
+refcnt %d
+ extentref_tree_oid: %lld sblock_oid: %lld change_time: %llu create_time: %llu
+ extentref_Tree_type: %u flags: %u name: '%s' name_len: %u
+ name: '%s' name_len: %u snap_xid: %lld
+error %d from cond wait
+%s: %s
+
+container superblock
+fusion superblock
+space manager
+object map
+snapshots
+APFS volume superblock
+fsroot tree
+extent ref tree
+snapshot metadata tree
+EFI jumpstart record
+Fusion data structures
+fragmented metadata trees
+
+object o_cksum
+object o_oid
+object o_xid
+object o_type
+object o_subtype
+
+apfs object crypto major version
+apfs object cpflags
+apfs_sb apfs_magic
+
+apfs_sb apfs_features
+apfs_sb apfs_readonly_compatible_features
+apfs_sb apfs_incompatible_features
+apfs_sb apfs_unmount_time is invalid
+apfs_sb apfs_fs_reserve_block_count
+apfs_sb apfs_fs_reserve_block_count
+apfs_sb apfs_fs_quota_block_count
+apfs_sb apfs_fs_alloc_count
+apfs_sb apfs_root_tree_type
+apfs_sb apfs_extentref_tree_type
+apfs_sb apfs_snap_meta_tree_type
+apfs_sb apfs_omap_oid
+apfs_sb apfs_root_tree_oid
+apfs_sb apfs_extentref_tree_oid
+apfs_sb apfs_revert_to_xid
+apfs_sb apfs_total_blocks_freed
+apfs_sb apfs_vol_uuid (not NULL)
+apfs_sb apfs_last_mod_time
+apfs_sb apfs_fs_flags
+apfs_sb apfs_volname
+apfs_sb apfs_formatted_by.id
+apfs_sb apfs_formatted_by.timestamp
+apfs_sb apfs_formatted_by.last_xid
+apfs_sb apfs_modified_by[%d].id (NULL terminated)
+apfs_sb apfs_modified_by[%d].timestamp
+apfs_sb apfs_modified_by[%d].last_xid
+apfs_sb apfs_volname (NULL terminated)
+apfs_sb apfs_next_doc_id
+
+apfs_next_obj_id
+apfs_num_files
+apfs_num_directories
+apfs_num_symlinks
+apfs_num_other_fsobjects
+apfs_num_snapshots
+
+nx_sb->nx_o.o_oid
+nx_superblock magic number
+nx_block_count
+nx_features
+nx_read_only_compatible_features
+nx_incompatible_features
+nx_uuid
+nx_next_oid
+nx_xp_desc_blocks
+nx_xp_data_blocks
+nx_xp_desc_next
+nx_xp_data_next
+nx_xp_desc_index
+nx_xp_desc_len
+nx_xp_data_index
+nx_xp_data_len
+nx_spaceman_oid
+nx_omap_oid
+nx_reaper_oid
+nx_max_file_systems
+nx_fs_oid
+nx_flags
+nx_ephemeral_info
+nx_fusion_mt_oid
+nx_fusion_wbc_oid
+nx_fusion_wbc
+cpm_o.o_oid
+checkpoint map o_xid
+cpm_count
+cpm_flags
+cpm_map[%d].cpm_type 
+cpm_map[%d].cpm_fs_oid 
+cpm_map[%d].cpm_oid 
+
+tier2 superblock
+main superblock
+
+checkpoint nx_block_size
+checkpoint nx_block_count
+checkpoint uuid
+checkpoint fusion uuid
+checkpoint nx_xp_desc_blocks
+checkpoint nx_xp_data_blocks
+checkpoint nx_xp_desc_base
+checkpoint nx_xp_data_base
+checkpoint fsck_obj_phys
+checkpoint obj->o_type
+
+spaceman block size 
+nx_superblock block size
+spaceman block count 
+nx_superblock block count
+spaceman blocks per chunk
+spaceman chunk count
+spaceman cib count
+spaceman tier2 device chunk count
+spaceman tier2 device cib count
+spaceman chunks per cib
+spaceman cibs per cab
+spaceman cab count
+spaceman tier2 device cab count
+spaceman ip block count
+spaceman ip bm block count
+spaceman IP bitmap range
+spaceman IP range
+spaceman ip bm range
+spaceman free count
+spaceman tier2 device free count
+spaceman ip bitmap block xid
+spaceman ip bitmap block address

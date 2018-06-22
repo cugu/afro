@@ -1,0 +1,8 @@
+.DS_Store
+
+build/
+dist/
+afro/test/images/
+afro.egg-info/
+
+__pycache__

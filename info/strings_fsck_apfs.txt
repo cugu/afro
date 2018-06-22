@@ -1,0 +1,2223 @@
+%s:%d: Hit err %d on obj_create, couldn't clean up tree (%d)
+gbitmap_create
+<BAD-KEY-LEN>
+0x%llx
+<BAD-VAL-LEN>
+%s:%d: obj_modify(fs %lld) failed: %d
+gbitmap_reap
+%s:%d: Can't get tree: %d
+%s:%d: deletion threw %d for cursor %llu, oid %llu, oflags 0x%x
+%s:%d: Tree iteration threw %d at cursor %llu
+%s:%d: Tree delete oid %llu threw %d
+%llx, %u
+%s:%d: tree_create failed: %d %s
+fusion_mt_create
+%s:%d: spaceman_free (%llx, %lld) failed with %d %s
+fusion_mt_remove_range_deallocate_rc
+%s:%d: fusion_rc_update_alloc_accounting (%lld) failed with %d %s
+%s:%d: Extent length is zero
+fusion_mt_read_extent
+%s:%d: Eviction of %llx, %llu failed with %d %s
+fusion_mt_evict_extent
+%s:%d: MT iteration failed with error: %d %s
+fusion_mt_evict
+%s:%d: rw-lock-write failed %d
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/nx/fusion_mt.c
+%s:%d: failed to get middle tree, error: %d %s
+fusion_mt_get_tree
+%s:%d: Failed to update extent %llx->%llx, %u : %d %s
+fusion_mt_remove_range
+%s:%d: Failed to insert extent %llx->%llx, %u : %d %s
+fusion_mt_remove_range_insert_tail
+%s:%d: rw-lock-read failed %d
+%s:%d: Invalid number of blocks needed :%d
+nx_update_efi_record
+%s:%d: tx_enter failed with error :%d
+%s:%d: Extent count exceeds maximum (%d). Could only allocate %d of %d blocks
+%s:%d: failed to get old efi object %lld: %d
+%s:%d: spaceman_free failed with error :%d
+%s:%d: tx_leave failed with error :%d
+nx_evict_efi_record
+hw.optional.sse4_2
+Cannot allocate space while performing fsck on a read-only or live fs
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_spaceman_impl.c
+Space Allocation: failed to allocate memory
+error (%d) getting cab %u @ %lld on device %d
+error (%d) getting cib %u @ %lld on device %d
+error (%d) getting cib bitmap %d @ %lld on device %d
+error (%d) writing bitmap @ %lld
+error (%d) writing cib %u @ %lld
+error (%d) writing spaceman
+fsck may bail out with overallocation - could not mark space allocated in fsck's version of the bitmap (%lld + %lld)
+%s:%d: Corruption detected by %s:%u in container %s!
+nx_corruption_detected_int
+%s:%d: Container corruption detected by %s:%u!
+%s:%d: failed: cksum 0x%016llx, oid 0x%llx, type 0x%x/0x%x, size %d
+obj_checksum_verify_phys
+nx_check_superblock
+%s:%d: failed to read CAB %lld error=%d
+get_free_extents_info_from_spaceman
+%s:%d: failed to read CIB %lld error=%d
+%s:%d: cib %lld cib_chunk_info_count %d overflow
+%s:%d: failed to read BITMAP %lld error=%d
+%s:%d: Invalid free count for non allocated chunk %u != %u
+%s:%d: cib %lld ci_index %x ci_block_count %d overflow
+usage: fsck_apfs [-q | -n | -y] [-l] device
+       -l            live fsck (lock down for verify-only)
+       -q            quick check if the superblock and checkpoint superblock are valid.
+       -y            always repair (answer "yes" to questions)
+       -n            verify only (answer "no" to questions)
+%s: not a valid disk name/path
+%s: couldn't find APFS container
+AppleAPFSVolume
+IOService
+%s: error %d from IORegistryEntryGetLocationInPlane
+%s: error %d from IORegistryEntryGetParentEntry
+AppleAPFSMedia
+%s: error %d from IORegistryEntryCreateCFProperties
+BSD Name
+%s: can't get BSD name of container
+/dev/r
+%s: can't create path to container
+Checking %s
+can't mount nx: %s
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/main.c
+Checking with nx_check.
+newfsck
+outputgui
+nxcheck
+outputxml
+error-file
+dfglpnqxyZE:
+option -f is not implemented, ignoring
+Could not open error file: %s
+unable to access %s: %s
+%s:%d: failed to get fs[%d] omap %lld: %d
+apfs_checkpoint_traverse
+%s:%d: fs[%d] omap checkpoint traverse (op %d) failed: %d
+%s:%d: failed to get fs[%d] root tree %lld: %d
+%s:%d: fs[%d] root tree checkpoint traverse (op %d) failed: %d
+%s:%d: failed to get fs[%d] extentref tree %lld: %d
+%s:%d: fs[%d] extentref tree checkpoint traverse (op %d) failed: %d
+%s:%d: failed to get fs[%d] snap meta tree %lld: %d
+%s:%d: fs[%d] snap meta tree checkpoint traverse (op %d) failed: %d
+%s:%d: failed to get fs[%d] omap oid %lld: %d
+apfs_checkpoint_fixup
+%s:%d: fs[%d] unable to fix up contents of omap, error %d
+%s:%d: unable to fix up contents of fs[%d] root tree %lld: %d
+%s:%d: unable to fix up contents of fs[%d] extentref tree %lld: %d
+%s:%d: unable to fix up contents of fs[%d] snap meta tree %lld: %d
+apfs_store_ephemeral
+%s:%d: unable to store ephemeral portions of fs[%d] root tree %lld: %d
+%s:%d: unable to store ephemeral portions of fs[%d] extentref tree %lld: %d
+%s:%d: unable to store ephemeral portions of fs[%d] snap meta tree %lld: %d
+apfs-rename-lock
+apfs-flags-lock
+apfs-incompat-features-lock
+apfs-phys-ext-oid-lock
+apfs-snapmeta-oid-lock
+apfs-omap-lock
+apfs-snap-delete-lock
+apfs-global-snap-lock
+apfs-global-lock
+%s:%d: bogus phase, %u
+apfs_reap
+%s:%d: failed to modify the apfs_t before reaping (error %d).
+%s:%d: freed != alloced (%llu freed, %llu alloced)
+%s:%d: apfs_store_ephemeral returned %d!
+%s:%d: omap_destroy returned %d!
+%s:%d: Hit %d looking up first snapshot
+apfs_reap_snapshots
+%s:%d: Couldn't find snapshot metadata for xid %llu
+%s:%d: lookup_next_snapshot() returned %d
+%s:%d: tree_get(oid=%llu, type=%u) returned %d
+apfs_reap_extentref_blocks
+%s:%d: tree_iter_init() returned %d
+Corruption! %llu:%llu couldn't be freed: %d
+%s:%d: iter_next returned %d
+Failed to allocate memory
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_spaceman_bitmap_helper.c
+error (%d) looking up spaceman IP bitmap block %u
+error (%d) getting spaceman IP bitmap block %u @ %lld
+error (%d) looking up spaceman IP block %u
+error (%d) writing spaceman IP bitmap %d @ %lld
+error (%d) getting cib %d bitmap %d @ %lld on device %d
+omap (oid 0x%llx): invalid om_flags (0x%x)
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_omap.c
+omap (oid 0x%llx): invalid om_snap_count (%u), given om_flags (0x%x)
+omap (oid 0x%llx): invalid om_tree_type (0x%x)
+omap (oid 0x%llx): invalid om_snapshot_tree_type (0x%x)
+omap (oid 0x%llx): invalid om_snapshot_tree_oid (0x%llx), given om_flags (0x%x)
+omap (oid 0x%llx): invalid om_most_recent_snap (0x%llx), given om_flags (0x%x)
+omap (oid 0x%llx): invalid om_pending_revert_min (0x%llx), given om_flags (0x%x)
+omap (oid 0x%llx): invalid om_pending_revert_max (0x%llx), given om_flags (0x%x)
+om: invalid om_snap_count (overflow)
+om: invalid om_snap_count (%u)
+Fix om_snap_count (oid 0x%llx)? 
+omap entry (oid 0x%llx): invalid ok_xid (0x%llx)
+omap entry (oid 0x%llx): invalid ov_flags (0x%x)
+omap entry (oid 0x%llx): invalid ov_size (%u)
+omap entry (oid 0x%llx): invalid ov_paddr (%llu)
+object (oid 0x%llx): Unable to mark omap entry range (0x%llx + %lu) allocated for space verification 
+omap snapshot: invalid key (0x%llx)
+omap snapshot: invalid oms_flags (0x%x)
+omap snapshot: invalid oms_pad (0x%x)
+obj_id: (%llu) has invalid type %d
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_jobj.c
+object (oid 0x%llx): Bad size for physical extent record key, len: %u
+object (oid 0x%llx): Bad size for physical extent record val, len: %u
+object (oid 0x%llx): Physical extent record length is 0
+object (oid 0x%llx): Physical extent owning_obj_id is 0
+object (oid 0x%llx): Unable to mark physical extent range (0x%llx + %llu) allocated for space verification 
+object (oid 0x%llx): Bad size for physical dstream record key, len: %u
+object (oid 0x%llx): Bad size for physical dstream record val len: %u
+fext_key : object (oid 0x%llx): Bad size for file extent record, key len: %u
+fext_val : object (oid 0x%llx): Bad size for file extent record, val len: %u
+fext_val : object (oid 0x%llx): Bad len for physical file extent record, len %llu
+fext_val : object (oid 0x%llx): invalid flags: (0x%02x)
+fext_val : object (oid 0x%llx): Bad phys_block_num+len for physical file extent record, phys_block_num %llu len %llu
+fe_val: object (oid 0x%llx): invalid crypto_id (0x%llx)
+inode_key: object (oid 0x%llx): invalid length (%u)
+inode_key: invalid hdr.obj_id (0x%llx)
+inode_val: object (oid 0x%llx): invalid length (%u)
+inode_val: object (oid 0x%llx): invalid type (0%o)
+inode_val: object (oid 0x%llx): invalid parent_id (0x%llx)
+inode_val: object (oid 0x%llx): invalid parent_id (0x%llx), given hdr.obj_id (0x%llx)
+inode: obj_id (0x%llx) and parent_id (0x%llx) mismatch for root directory
+inode: obj_id (0x%llx) and parent_id (0x%llx) mismatch for private directory
+inode_val: object (oid 0x%llx): invalid private_id (0x%llx)
+inode_val object (oid 0x%llx): invalid private_id (0x%llx)
+inode_val: object (oid 0x%llx): invalid nchildren (%d)
+inode_val: object (oid 0x%llx): invalid nlink (%d) 
+inode_val: object (oid 0x%llx): invalid internal_flags (0x%llx)
+inode_val: object (oid 0x%llx): invalid internal_flags (0x%llx), given type (0%o)
+Fix inode_val: internal_flags (0x%llx)? 
+inode_val: object (oid 0x%llx): invalid default_protection_class (%u)
+inode_val: object (oid 0x%llx): invalid bsd_flags (0x%x)
+inode_val: object (oid 0x%llx): invalid pad1 (0x%hx)
+inode_val: object (oid 0x%llx): invalid pad2 (0x%llx)
+inode_val: object (oid 0x%llx): invalid xfields
+crypto_key: object (oid 0x%llx): invalid length (%u)
+crypto_key: invalid hdr.obj_id (0x%llx)
+crypto_val:  object (oid 0x%llx): invalid length (%u)
+crypto_val: invalid length (%u)
+crypto_val: object (oid 0x%llx): invalid refcnt (%u)
+crypto_val: object (oid 0x%llx): invalid state.major_version (%u)
+crypto_val: object (oid 0x%llx): invalid state.minor_version (%u)
+crypto_val: object (oid 0x%llx): invalid state.cpflags (%u)
+crypto_val: object (oid 0x%llx): invalid state.persistent_class (%u)
+crypto_val: object (oid 0x%llx): invalid state.key_os_version (0x%x)
+crypto_val: object (oid 0x%llx): invalid state.key_revision (%u)
+crypto_val: object (oid 0x%llx): invalid state.key_len (%u)
+crypto_val: object (oid 0x%llx): invalid length (%u), given state.key_len (%u)
+xattr_key: object (oid 0x%llx): invalid length (%u)
+xattr_key: invalid hdr.obj_id (0x%llx)
+xattr_key: object (oid 0x%llx): invalid name_len (%u)
+xattr_key: object (oid 0x%llx): invalid length (%u), given name_len (%u)
+xattr_key: object (oid 0x%llx): invalid name (%.*s), given name_len (%u)
+xattr_key: object (oid 0x%llx): invalid name (%.*s)
+xattr_val: object (oid 0x%llx): invalid length (%u)
+xattr_val: object (oid 0x%llx): invalid flags (0x%x)
+com.apple.fs.symlink
+xattr_val: object (oid 0x%llx): invalid flags (0x%x), given name (%.*s)
+xattr_val: object (oid 0x%llx): invalid xdata_len (%u), given flags (0x%x)
+xattr_val: object (oid 0x%llx): invalid length (%u), given xdata_len (%u)
+xattr_val: object (oid 0x%llx): invalid xattr_obj_id (0x%llx)
+xattr_val: invalid xattr_obj_id (0x%llx)
+xattr_val: object (oid 0x%llx): invalid dstream
+drec_key object: invalid length (%u)
+drec_key object (oid 0x%llx): invalid length (%u)
+drec_key: invalid hdr.obj_id (0x%llx)
+drec_key object (oid 0x%llx): invalid name_len (%u)
+drec_key object (oid 0x%llx): invalid length (%u), given name_len (%u)
+drec_key object (oid 0x%llx): invalid name (%.*s), given name_len (%u)
+drec_key object (oid 0x%llx): invalid name (%.*s)
+drec_key object (oid 0x%llx): invalid hash (%x, expected %x) of name (%.*s)
+drec_val object (oid 0x%llx): invalid length (%u)
+drec_val object (oid 0x%llx): invalid file_id (0x%llx) (%s)
+drec_val: invalid file_id (0x%llx) (%s)
+drec: hdr.obj_id (0x%llx), file_id (0x%llx) and name (%.*s) mismatch for root directory
+private-dir
+drec: hdr.obj_id (0x%llx), file_id (0x%llx) and name (%.*s) mismatch for private directory
+drec_val object (oid 0x%llx): invalid flags (0x%hx)
+drec_val object (oid 0x%llx): invalid type (%u)
+drec_val object (oid 0x%llx): invalid xfields
+sibling_map_key object (oid 0x%llx): invalid length (%u)
+sibling_map_val object (oid 0x%llx): invalid length (%u)
+sibling_map_key: invalid hdr.obj_id (0x%llx)
+sibling_val object (oid 0x%llx): invalid file_id (0x%llx)
+sibling_val: invalid file_id (0x%llx)
+sibling_key object (oid 0x%llx): invalid length (%u)
+sibling_key: invalid hdr.obj_id (0x%llx)
+sibling_key object (oid 0x%llx): invalid sibling_id (0x%llx)
+sibling_key: invalid sibling_id (0x%llx)
+sibling_val object (oid 0x%llx): invalid length (%u)
+sibling_val: object (oid 0x%llx): invalid parent_id (0x%llx)
+sibling_val: invalid parent_id (0x%llx)
+sibling_val object (oid 0x%llx): invalid length (%u), given name_len (%u)
+sibling_val object (oid 0x%llx): invalid name (%.*s), given name_len (%u)
+sibling_val object (oid 0x%llx): invalid name (%.*s)
+dir_stats_key object (oid 0x%llx): invalid length (%u)
+dir_stats_key: invalid hdr.obj_id (0x%llx)
+dir_stats_val object (oid 0x%llx): invalid length (%u)
+dir_stats_val: object (oid 0x%llx): invalid chained_key (0x%llx)
+dir_stats_val: invalid chained_key (0x%llx)
+dir_stats_val object (oid 0x%llx): invalid gen_count (%llu)
+snap_metadata_key object (oid 0x%llx): invalid length (%u)
+snap_metadata_key: invalid hdr.obj_id (0x%llx)
+snap_metadata_val object (oid 0x%llx): invalid length (%u)
+snap_metadata_val object (oid 0x%llx): invalid extentref_tree_oid (0x%llx)
+snap_metadata_val object (oid 0x%llx): invalid sblock_oid (0x%llx)
+snap_metadata_val: object (oid 0x%llx) invalid inum (0x%llx)
+snap_metadata_val: invalid inum (0x%llx)
+snap_metadata_val object (oid 0x%llx): invalid extentref_tree_type (0x%x)
+snap_metadata_val object (oid 0x%llx): invalid flags (0x%x)
+snap_metadata_val object (oid 0x%llx): invalid name_len (%u)
+snap_metadata_val object (oid 0x%llx): invalid length (%u), given name_len (%u)
+snap_metadata_val object (oid 0x%llx): invalid name (%.*s), given name_len (%u)
+snap_metadata_val object (oid 0x%llx): invalid name (%.*s)
+object (oid 0x%llx) : name mismatch between snap_meta record (%.*s) and snap_name record (%.*s)
+Fix snap_metadata_val : name? 
+object (oid 0x%llx): Unable to mark snapshot apfs superblock range (0x%llx + 1) allocated for space verification
+snap_name_key object (oid 0x%llx) : invalid length (%u)
+snap_name_key: invalid hdr.obj_id (0x%llx)
+snap_name_key object (oid 0x%llx) : invalid name_len (%u)
+snap_name_key object (oid 0x%llx) : invalid length (%u), given name_len (%u)
+snap_name_key object (oid 0x%llx) : invalid name (%.*s), given name_len (%u)
+snap_name_key object (oid 0x%llx) : invalid name (%.*s)
+snap_name_val object (oid 0x%llx) : invalid length (%u)
+snap_name_val object (oid 0x%llx) : invalid snap_xid (0x%llx)
+failed to allocate memory for repair
+xf : xf is NULL, given that xf_len is %u
+xf : xf_num_exts (%u) extended fields do not appear to fit in the inode/drec given xf_used_data (%u)
+xf : DREC_EXT_TYPE_SIBLING_ID : invalid sibling_id (0x%llx)
+invalid xf.xf_type (0x%x)
+xf : INO_EXT_TYPE_DOCUMENT_ID :invalid doc_id (0x%x)
+xf : failed to allocate memory to validate INO_EXT_TYPE_NAME
+xf : INO_EXT_TYPE_NAME : invalid name (%.*s), given name_len (%u)
+xf : INO_EXT_TYPE_NAME : invalid name (%s)
+xf : INO_EXT_TYPE_DSTREAM : invalid dstream
+xf : INO_EXT_TYPE_DIR_STATS_KEY : invalid dir_stats_key (0x%llx)
+xf : INO_EXT_TYPE_FS_UUID : uuid is NULL
+xf : INO_EXT_TYPE_SPARSE_BYTES : sparse_bytes set even though inode is not sparse
+invalid xfield type (%d)
+invalid dstream.size (%llu), is greater than dstream.alloced_size (%llu)
+invalid dstream.default_crypto_id (0x%llx)
+invalid dstream.default_crypto_id (0x%llx) for encrypted volume, given apfs_fs_flags (0x%llx)
+invalid dstream.default_crypto_id (0x%llx) for effaceable volume, given apfs_fs_flags (0x%llx)
+invalid dstream.default_crypto_id (0x%llx) for encrypted or effaceable
+invalid dstream.default_crypto_id (0x%llx), given apfs_fs_flags (0x%llx)
+fusion middle tree: invalid key length %u (expected %lu)
+fusion middle tree: invalid value length %u (expected %lu)
+fusion middle tree: invalid "from" range 0x%llx:%llu
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_fusion.c
+fusion middle tree: invalid "to" range 0x%llx:%llu
+fusion middle tree: cannot map withing the same device (0x%llx -> 0x%llx)
+fusion wbc: stable head offset (%llu) is greater than tail (%llu)
+fusion wbc: WBC list OIDs are not consistent: Head: 0x%llx, Tail: 0x%llx
+fusion wbc: WBC list head OID 0x%llx is not in the WBC range
+fusion wbc: WBC list tail OID 0x%llx is not in the WBC range
+fusion wbc: WBC list object OID 0x%llx is not in the WBC range
+fusion wbc: WBC list chunk (oid 0x%llx) has max entries %u != %u
+fusion wbc: WBC list chunk (oid 0x%llx) has invalid first index %u
+fusion wbc: WBC list chunk (oid 0x%llx) has invalid last index %u
+fusion wbc: WBC list entry has invalid WBC range 0x%llx+%llu
+fusion wbc: WBC list entry has invalid target range 0x%llx+%llu
+fusion wbc: WBC list chunk (oid 0x%llx) has incorrect tailOffset %llu, should be >%llu, >=%llu, and <=%llu
+fusion wbc: expected %u list chunks but found %u
+com.apple.filesystems.fsck.apfs
+hw.memsize
+btree_node_sanity_check
+btree_node_child_id
+%s:%d: request to insert entry %d (%d) %d (%d) = (%d), max size is %d key %d, error %d
+bt_insert
+%s:%d: bt_shift_or_split failed with error: %d
+%s:%d: minkey update failed with error: %d
+%s:%d: btree_node_key_update failed: %d
+you can't change a key here!  (ekey %p eklen %d; key %p klen %d; n %p bt %p)
+bt_remove
+%s:%d: node %lld: error getting index %d child oid: %d
+btree_iterate_nodes
+%s:%d: node %lld index %d: more levels than expected
+%s:%d: node %lld: error getting index %d child: %d
+%s:%d: btree_node_insert_internal failed: %d
+btree_node_copy
+%s:%d: error adding btree 0x%llx type 0x%x to reap list: %d
+btree_delete
+%s:%d: btree_evict_area called on non-physical tree oid: %llu
+btree_evict_range
+%s:%d: btree_node_child_id failed with error: %d
+%s:%d: btree_node_get failed with error: %d
+btree_node_val_update failed with error: %d
+btree_node_reap
+%s:%d: error getting oid for child %d of 0x%llx: %d
+%s:%d: error adding child 0x%llx type 0x%x to reap list: %d
+%s:%d: error deleting child 0x%llx type 0x%x: %d
+btree_node_key_range_validate
+btree_node_val_range_validate
+%s:%d: SKIPPING createnewnode: btree level %d index node %lld parent %lld createnewnode %d, insert %d %d splitting %d child keycount %d insertindex %d moveindex %d nextchild oid %lld keycount %d ikey %s
+bt_shift_or_split
+%s:%d: bt_move_entries %d failed: %d
+%s:%d: btree_node_insert failed: %d
+%s:%d: failed to get newnode minkey: %d
+%s:%d: reverting on error: %d
+%s:%d: bt_move_entries() failed (%d) while trying to revert changes due to error: %d
+%s:%d: btree_node_key_update() failed (%d) while trying to revert changes due to error: %d
+%s:%d: btree_node_insert() failed (%d) while trying to revert changes due to error: %d
+%s:%d: unable to reclaim just-freed key space on error path: %d
+btree_node_entry_update
+%s:%d: unable to reclaim just-freed val space on error path: %d
+%s:%d: unable allocate space that should be there: %d
+btree_node_free_list_entry_validate
+btree_node_insert_internal
+%s:%d: updating grandparent failed w/%d
+bt_merge_up
+%s:%d: failed to move all entries: %d
+bt_merge_nodes
+_bt_lookup_variant
+%s:%d: oid %lld: freespace %u larger than nodespace %u
+btree_node_debug_stats
+%s:%d: oid %lld: index %d key length %d longer than tree longest %d
+%s:%d: oid %lld: index %d val length %d longer than tree longest %d
+%s:%d: oid %lld: root node has a parent %lld
+btree_node_check
+%s:%d: oid %lld: leaf node has non-zero level %d
+%s:%d: oid %lld: node level %d greater than root level %d
+%s:%d: oid %lld: node level %d should be %d
+%s:%d: oid %lld: invalid table space offset
+%s:%d: oid %lld: table space length larger than available data space
+%s:%d: oid %lld: table space length smaller than minimum
+%s:%d: oid %lld: free space offset too large
+%s:%d: oid %lld: free space extends beyond end of node
+%s:%d: oid %lld: key count larger than possible
+%s:%d: oid %lld: key count larger than gross key space
+%s:%d: oid %lld: key count larger than TOC space
+%s:%d: oid %lld: invalid TOC[] pointer
+%s:%d: oid %lld: invalid keys[] pointer
+%s:%d: oid %lld: invalid vals[] pointer
+%s:%d: oid %lld: key free list space larger than key space available
+%s:%d: oid %lld: key free list head beyond key space available
+%s:%d: oid %lld: val free list space larger than val space available
+%s:%d: oid %lld: val free list head beyond val space available
+%s:%d: oid %lld: val free list head beyond end of node
+%s:%d: oid %lld: couldn't allocate bitmap to check btree node space usage
+%s:%d: oid %lld: key free list entry starts beyond key space available
+%s:%d: oid %lld: key free list entry len value too small
+%s:%d: oid %lld: key free list entry extends beyond key space available
+%s:%d: oid %lld: key free list entry overlaps with other free space
+%s:%d: oid %lld: key free list entries total space exceeds free list space
+%s:%d: oid %lld: key free list entry points to itself
+%s:%d: oid %lld: val free list entry beyond end of node
+%s:%d: oid %lld: val free list entry starts beyond val space available
+%s:%d: oid %lld: val free list entry extends beyond val space available
+%s:%d: oid %lld: val free list entry overlaps with other free space
+%s:%d: oid %lld: val free list entries total space exceeds free list space
+%s:%d: oid %lld: node says kv size is fixed, but tree says key size is variable
+%s:%d: oid %lld: tree says key size is fixed, but node says kv size is variable
+%s:%d: oid %lld: node says kv size is fixed, but tree says val size is variable
+%s:%d: oid %lld: tree says kv sizes are fixed, but leaf says kv size is variable
+%s:%d: oid %lld: invalid key offset
+%s:%d: oid %lld: key size greater than longest recorded for tree
+%s:%d: oid %lld: key location not within key space
+%s:%d: oid %lld: key location extends beyond key space
+%s:%d: oid %lld: key entry overlaps with free space
+%s:%d: oid %lld: key entry overlaps with other entries
+%s:%d: oid %lld: val size greater than longest recorded for tree
+%s:%d: oid %lld: val location not within val space
+%s:%d: oid %lld: val location extends beyond val space
+%s:%d: oid %lld: val entry overlaps with free space
+%s:%d: oid %lld: val entry overlaps with other entries
+%s:%d: oid %lld: invalid val offset has non-zero length
+%s:%d: oid %lld: can't get key %d: %d
+%s:%d: oid %lld: minkey compare error: %d
+%s:%d: oid %lld: minkey not correct
+%s:%d: oid %lld: minkey not in sync
+%s:%d: oid %lld: key %d compare error: %d
+%s:%d: oid %lld: keys out of order: %d
+%s:%d: oid %lld: node's max key is not less than next sibling's entry in parent
+%s:%d: oid %lld: non-leaf node has no children?
+%s:%d: oid %lld: can't get child %d oid: %d
+%s:%d: oid %lld: invalid child oid: %lld
+%s:%d: oid %lld: can't get child: %lld
+%s:%d: btree check called with non-root btree node: %d
+btree_check
+%s:%d: oid %lld: btree key count doesn't match # leaf entries
+btree_check_recent_sanity
+%s:%d: node %lld: error getting index %d key/val: %d
+capacity: %llu / %llu => %.2f %% used
+nodesize: %d  dataspace: %d  key size: %d  val size: %d  max keys: node %d leaf %d  avg keys: node %d leaf %d
+levels: %d  keys: %lld  nodes: total %d  internal: %d (%.2f%%)  leaves: %d (%.2f%%)  usage: %.2f%% (%.2f%% %.2f%%)
+key/val sizes:  tree max k:%d v:%d  max k:%d v:%d  avg k:%llu v:%llu
+    keys: %9s %9s %9s %9s %9s %9s
+    keys: %9d %9d %9d %9d %9d %9d
+    keys: %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f
+  values: %9s %9s %9s %9s %9s %9s
+  values: %9d %9d %9d %9d %9d %9d
+  values: %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f
+capacity: all    %llu / %llu => %.2f %% used
+capacity: %9s %9s %9s %9s %9s %9s
+capacity: %9d %9d %9d %9d %9d %9d
+capacity: %9.2f %9.2f %9.2f %9.2f %9.2f %9.2f
+capacity: nodes  %llu / %llu => %.2f %% used
+capacity: leaves %llu / %llu => %.2f %% used
+ID %llu flags 0x%x %s%s%s%s L %d TOC %d/%d # %d/%d free %d %d %d toc %d tot %d - keys %p vals %p toc %p
+%llu(%u)
+crypto_cache_lock
+kern.osversion
+%s:%d: cp_os_version: unable to parse osversion `%s'
+cp_os_version
+crypto-id %lld still has refcount %d
+crypto state retain count %d is not valid (crypto-id %lld, apfs %p)
+%s:%d: can't get the device block size (%s). assuming 512
+io_get_device_block_size
+%s:%d: blknum 0x%llx size %ld, error %d
+fd_dev_read
+%s/apfs
+%s:%d: failed to open apfs/nx special devices (%s/%s).  err %d (%s)
+dev_init
+%s:%d: Using %s and %s for device-io.
+%s:%d: can't get block count (%s)
+io_get_num_device_blocks
+verification/reading of the nx_reaper object failed
+reaper completed ID 0x%llx not less than next reap ID 0x%llx
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_reaper.c
+reaper needs more cowbell, flags 0x%x
+reaper has tail with no head
+reap list object 0x%llx record count %d larger than max %d
+reap list object 0x%llx first index %u larger than max %u
+reap list object 0x%llx last index %u larger than max %u
+reap list object 0x%llx free index %u larger than max %u
+last reap list object 0x%llx doesn't match tail 0x%llx
+reap list tail 0x%llx is not last reap list object, next 0x%llx
+reap list expected %u objects, but haven't seen last reap list object yet
+reap list expected %u objects, but got last reap list object with %u more objects left
+reaper list entry (index (%u) list oid (0x%llx)) : index not less than nrl_max (%u)
+reaper list entry (index (%u) list oid (0x%llx)) : invalid flags (0x%x) set
+reaper list entry (index (%u) list oid (0x%llx)) : is not valid as per flags(0x%x)
+reaper list entry (index (%u) list oid (0x%llx)) : invalid nrle_fs_oid (0x%llx)
+failed to read object (oid (0%llx)) being reaped from disk 
+object (oid (0%llx)) being reaped : Unable to mark object range (0x%llx + %u) allocated for space verification 
+object (oid (0%llx)) being reaped : Invalid tree subtype (%u)
+btree node (oid (0%llx)) being reaped has invalid val_len (%u) at index (%d) 
+Could not initialize omap tree (oid 0x%llx)
+Could not iterate omap tree to read reaper objects (oid 0x%llx) : %d
+failed to allocate memory for reaper space verification
+Could not iterate snapmeta tree to read reaper objects (oid 0x%llx) : %d
+Could not initialize extentref tree (oid 0x%llx)
+Could not iterate extentref tree to read reaper objects(oid 0x%llx) : %d
+object (oid (0%x)) being reaped : Unable to mark object range (0x%x + %llu) allocated for space verification 
+Could not initialize gbitmap tree (oid 0x%llx)
+Could not iterate gbitmap tree to read reaper objects (oid 0x%llx) : %d
+(oid 0x%llx) %s: invalid object address (0x%llx)
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_obj.c
+(oid 0x%llx) %s: _xp_lookup_obj(0x%llx): %s
+(oid 0x%llx) %s: invalid cpm_size (0x%x)
+(oid 0x%llx) %s: invalid cpm_paddr (0x%llx)
+(oid 0x%llx) %s: _omap_lookup_obj(0x%llx, 0x%llx): %s
+(oid 0x%llx) %s: invalid ov_flags (0x%x)
+(oid 0x%llx) %s: encrypted bit is different to the volume-wide one (0x%x)
+(oid 0x%llx) %s: invalid ov_size (0x%x)
+(oid 0x%llx) %s: invalid ov_paddr (0x%llx)
+(oid 0x%llx) %s: malloc(%u)
+(oid 0x%llx) %s: dev_read(%llu, %u): %s
+(oid 0x%llx) %s: invalid o_cksum (0x%llx)
+%s: invalid o_oid (0x%llx)
+(oid 0x%llx) %s: invalid o_xid (0x%llx)
+(oid 0x%llx) %s: invalid o_type (0x%x)
+(oid 0x%llx) %s: invalid o_subtype (%u)
+object (oid 0x%llx): Unable to mark object range (0x%llx + %u) allocated for space verification
+%s : dev_write(%llu, %u) %p
+fsck_apfs (%s)
+748.1.47
+om: btn
+oms: btn
+apfs_root: btn
+apfs_extentref: btn
+apfs_snap_meta: btn
+om: mt
+oms: mt
+apfs_root: mt
+apfs_extentref: mt
+apfs_snap_meta: mt
+%s:%d: inserting bad phy ext @ %p : kind %d refcnt %d
+jobj_to_key_val
+bad pext.
+%s:%d: File extent too large (%llu > %llu): laddr %llu, paddr %llu
+%s:%d: failed to serialize ino %lld into jval of size %zd
+%s:%d: failed to serialize drec %lld/%s into jval of size %zd
+%s:%d: X %d
+insert_jobj
+%s:%d: failed to init extended fields on inode %lld from blob (xfret %d).
+key_val_to_jobj
+%s:%d: failed to init extended fields on drec %lld/%s from blob.
+lookup_jobj_in_snap
+apfs-phys-lock-state-mutex
+%s:%d: Couldn't acquire lock on %llu-%llu, err=%d
+apfs_update_phys_range
+%s:%d: tree_remove(%llu) failed
+%s:%d: apfs_free_data_blocks(%llu,%llu) failed: %d %s
+%s:%d: Attempted to %s range %llu+%llu but it isn't entirely there! (found gap at %llu, next range at %llu+%llu)
+reference
+dereference
+SnapMetadata
+PhysExtent
+CryptoState
+DirRecord
+FileExtent
+DstreamID
+SiblingLink
+SiblingMap
+DirSize
+SnapName
+INVALID
+type:%d
+Update
+RefCntUpd
+kind:%d
+id:%lld %s %s
+ %u:%.*s
+ 0x%06x:%u:%.*s
+ %d:%.*s
+ef_oid:%llu sb_oid:%llu create_time:%llu inum:%llu ctime:%llu ef_type:0x%x flags:0x%x name:%u:%.*s
+len:%lld owning_obj_id:%lld refcnt: %d
+parent:%lld private:%lld flags:0x%llx mode:%o uid/gid:%d/%d bsdflags:0x%x %s:%d cr8:mod:chg:acc %lld:%lld:%lld:%lld
+nchildren
+crypto state persistent class 0x%x,
+file-id: %lld date-added:%lld flags:0x%x
+len:%lld phys:%lld crypto:%lld flags:%llx
+flags:0x%x
+parent:%lld name:%d:%.*s
+orig-file-id: %lld
+refcnt:%d
+num children:%lld total size:%lld gen-count:%lld chained-key: %lld
+snap_xid:%llu
+---UNKNOWN---
+%s:%d: crypto_hash_insert of new crypto_id %lld should not have failed (ret %d)
+get_new_crypto_id_with_crypto_flags
+%s:%d: could not unwrap crypto-id %lld (err %d)
+get_crypto_state_for_id
+%s:%d: was NOT able to update/decrement crypto state %lld, err = %d
+decrement_crypto_state_refcnt
+%s:%d: danger - crypto id %lld had refcnt %d
+%s:%d: failed to %s crypto-id %lld (ret %d)
+change_crypto_id_prot_class
+insert
+update
+%s:%d: error initializing class %d crypto state (crypto id %llu)
+%s:%d: Sparse extent has non-zero crypto-id!
+crypto_id_converter
+%s:%d: Unexpected extent with zero crypto-id!
+%s:%d: error initializing class B crypto state (crypto id %llu)
+%s:%d: could not lookup crypto-id %lld (ret %d)
+%s:%d: failed to update dstream on xdstream %llu
+change_xdstream_prot_class
+%s:%d: failed to change xdstream prot class (xdstream %llu default crypto id %llu error %d)
+com.apple.ResourceFork
+%s:%d: change_xdstream_prot_class failed on ino %llu (err %d)
+change_prot_class
+%s:%d: get_cp_class_for_crypto_id failed (crypto id %llu, error %d)
+retain_xdstream_crypto_states
+%s:%d: failed to retain file dstream crypto states (error %d)
+retain_crypto_states
+%s:%d: failed to retain xattr dstream crypto states - crypto state ref counts may now be off (error %d)
+%s:%d: ino %lld is flagged to maintain-dir-size but has no dir-size-key extended field
+update_dir_size_state
+%s:%d: failed to update dir size key %lld for ino %lld (ret %d)
+%s:%d: ino %lld flagged as dir-size-origin but has not dir-size key!
+dir_stats_moved
+%s:%d: failed to set dstats key %lld from to_dir %lld on ino %lld
+%s:%d: inode %llu was marked sparse but didn't have a sparse bytes extended field?
+%s:%d: can not have a crypto_id of 0 on an encrypted fs! (ino %lld default prot class %d)
+fs_create_dstream
+%s:%d: *** failed to set dstream as an extended field of ino %lld (ret %d)
+%s:%d: *** failed to fetch the dstream pointer for %lld (ret %d)
+0x%llx-dead
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/nx/jobj.c
+%s:%d: couldn't allocate memory for link origin
+insert_linkid
+%s:%d: failed to remove sibling hard link entry for ino %lld under hardlink/sibling key %lld/%lld w/drec %lld:%s (ret %d)
+remove_dir_entry
+%s:%d: failed to remove drec %lld:%s ino %lld ret %d
+%s:%d: failed to remove extent for extent-id %lld @ logical offset %lld:%lld err %d
+remove_extent_of_file
+%s:%d: failed to decrement crypto state = %llu, err %d
+%s:%d: failed to decrement physical range pbn=%llu len=%llu for obj-id %lld
+res->xid %lld but xid is now %lld
+%s:%d: could not lookup dstream-id %lld (err %d)
+iteratively_remove_extents_of_file
+%s:%d: ino %p: link count == %d for inum %lld?!
+fs_obj_delete
+%s:%d: %s: could not insert dir rec for obj-id %lld (name: %s)
+fs_obj_create_name_checked
+ino-lock
+ino-io-lock
+%s:%d: *** failed to set rdev as an extended field of ino %lld (ret %d)
+%s:%d: parent ino %lld is flagged to maintain-dir-size but has no dstats key!
+%s:%d: %s: could not insert inode obj-id %lld (name: %s)
+%s:%d: %s: could not remove dir rec for obj-id %lld (name: %s)
+%s:%d: failed to update parent ino %lld nchildren field on create of %s (err %d)
+%s:%d: failed to create object named %s in dir w/obj-id %lld err %d
+fs_obj_create_do
+%s:%d: DANGER! got the same extent for logical addr %lld twice!
+fext_collector
+can't return crypto_id if it's a tweak
+%s:%d: failed to insert extent for ino %lld @ logical offset %lld
+clone_extents_of_file
+%s:%d: failed to increment physical range pbn=%llu len=%llu for obj-id %lld
+%s:%d: failed to decrement crypto state ref cnt on crypto_id %lld
+%s:%d: failed to decrement refcnt on crypto-id %lld on behalf of ino %lld %lld:%lld (ret %d) 
+%s:%d: failed to dereference blocks, pbn:%llu len:%llu
+%s:%d: failed to remove extent %lld %lld:%lld (ret %d) 
+%s:%d: estimate_number_of_extents: inode %lld was marked sparse but has no sparse bytes extended field. Ignoring.
+estimate_number_of_extents
+%s:%d: bad move stan. extents w/id %lld on ino %lld has a refcnt of %d!
+clone_extents_if_needed
+%s:%d: failed to load inode %lld ret %d
+fs_get_inode_with_hint
+%s:%d: snap_name='%s' snap_xid %lld extentref oid %lld sblock oid %lld
+fs_insert_snapshot_metadata
+%s:%d: Inserting snap_name failed, %d
+%s:%d: Inserting snap_meta failed, %d
+%s:%d: Couldn't find snap_meta for xid %llu
+fs_lookup_snapshot_metadata_by_xid
+%s:%d: Couldn't find name for snap_xid %llu
+fs_remove_snapshot_metadata
+%s:%d: Failed to remove snap_name record!
+%s:%d: Failed to remove snap_meta record!
+%s:%d: remove_jobj(old-snap-name) returned %d
+fs_rename_snapshot
+%s:%d: fs_update_snap_metadata() returned %d
+com.apple.apfs.
+snapxid.
+purgatory.
+%s:%d: apfs: next = %llu err = %d
+find_next_non_dataless_snapshot
+%s:%d: Couldn't find this snap metadata, xid %llu, err %d
+delete_clone_fs
+%s:%d: snap %llu isn't in purgatory or pending dataless (?)
+%s:%d: snap %llu has make_dataless, but already is dataless! (?)
+%s:%d: Couldn't get delta extentref tree, oid %llu, err %d
+%s:%d: Couldn't find next snapshot xid, err %d
+%s:%d: Couldn't find next snap metadata cur:%llu next:%llu, err %d
+%s:%d: Couldn't get next extentref tree, oid %llu, err %d
+%s:%d: fs_tx_enter failed, err %d
+%s:%d: Not enough space to free a single block
+%s:%d: Couldn't modify delta extentref tree, oid %llu, err %d
+%s:%d: Couldn't update this snapshot's metadata, xid %llu, err %d
+%s:%d: Couldn't modify next extentref tree, oid %llu, err %d
+%s:%d: Couldn't update next snap metadata, xid %llu, err %d
+%s:%d: Error processing blocks from snap xid %llu into snap xid %llu, err %d
+%s:%d: tree_key_count() err %d
+%s:%d: Finished processing snap extentref tree, oid %llu, but it still has entries!
+%s:%d: fs_tx_enter err %d
+%s:%d: Couldn't make snap metadata dataless, err %d
+%s:%d: Couldn't delete snap meta records, err %d
+%s:%d: Couldn't delete extentref tree, err %d
+%s:%d: Couldn't delete clone superblock, err %d
+%s:%d: Couldn't delete omap snapshot, err %d
+%s:%d: fs extentref tree creation failed: %d
+revert_extents_to_snapshot
+%s:%d: free'ing extents in main extentref tree %lld
+%s:%d: name is bad, name_len=%lu name[0] = %u
+clone_fs
+%s:%d: error: snapshots manipulation not allowed while shrinking the container
+%s:%d: error: snapshots are not allowed while eviction is taking place
+%s:%d: tx_finish returned %d
+%s:%d: fs_tx_enter returned %d
+%s:%d: Couldn't clone superblock, err %d
+%s:%d: Couldn't insert snapshot metadata, err %d
+%s:%d: Couldn't create new extentref tree, err %d
+%s:%d: failed to create snapshot: %d
+%s:%d: error: tx_finish returned %d
+%s:%d: name <%s> is TOO LONG! (%d / max %d)
+fs_obj_clone_name_checked
+clone-0x%llx
+%s:%d: failed to get the new parent ino %lld (for cloning from %lld)
+%s:%d: could not fetch new clone %lld
+%s:%d: failed to alloc temp clone drec (name %s, err %d)
+%s:%d: failed to remove temp clone name %s in private dir (err %d)
+%s:%d: failed to set new name %s on clone
+%s:%d: failed to alloc dir rec in error path, err=%d ret=%d
+dead-0x%llx
+%s:%d: failed to insert dead record in purgatory for failed clone w/ino # %lld (ret %d)
+jdev_read_data() corrupts encrypted data
+jdev_write_data() corrupts encrypted data
+%s:%d:    %3d: %lld:%lld (crypto-id %lld, hash ref count %x) %lld
+dump_extents_of_stream
+%s:%d: ino id %llu: dstream id %llu size %llu alloced_size %llu default_crypto_id %llu (hash ref count %x)
+dump_extents_of_file
+ino %lld pos:len %lld:%lld fext %lld:%lld (%lld)
+ino %lld illogical file extent %lld:%lld != alloced_size %lld (fsize %lld)
+%s:%d: ino %lld file extent %lld:%lld extends beyond alloced_size %lld (fsize %lld). fixing it.
+alloc_space_for_write_with_hint
+ino %lld no extent covering dstream alloced_size %lld (fsize %lld) pos/len %lld:%lld
+%s:%d: spaceman_alloc() w/blks_this_allocation %lld xid %lld failed (paddr %lld actual_blks_allocated %lld) err %d
+we asked for %lld blocks but got %lld (orig %lld, this_alloc_blks %lld)
+%s:%d: wanted %lld blocks but got zero and no error.
+%s:%d: failed inserting hole %lld:%lld (pos %lld, len %lld alloced_size %lld) err %d
+%s:%d: failed to extend existing extent %lld:%lld
+%s:%d: failed inserting fext %lld / %lld phys %lld len %lld err %d
+ino %lld you must have an extent covering the alloced size %lld (fsize %lld) orig_pos %lld:%lld err %d
+%s:%d: could not alloc %zd bytes @ pos %lld for obj-id %lld (err %d)
+fs_write_stream
+%s:%d: failed to lookup pos %lld in obj-id %lld err %d
+%s:%d: got err %d writing at pos %lld in obj-id %lld (blkcount %zd, len %zd)
+%s:%d: failed to finish writing to obj-id %lld (pos %lld / new_size %lld)
+%s:%d: Couldn't get active extentref tree, err=%d
+fs_make_phys_range_writable
+%s:%d: apfs_update_phys_range failed, err = %d
+%s:%d: allocate_phys_range failed, err = %d
+%s:%d: Failing with error=%d
+%s:%d: invalidating tail hole on ino %lld (tail_hole_boundary %lld:%llu; pos %lld fsize %lld alloced %lld)
+fs_map_file_offset
+%s:%d: Error! tree_lookup_le of %lld:%lld returned %d!
+find_first_overlapping_phys_extent
+%s:%d: Error! tree_lookup_ge of %lld:%lld returned %d!
+%s:%d: A snapshot disappeared (?) at %u of %u
+fs_calculate_snapshot_range_space_usage
+%s:%d: failed to lookup pos %lld in obj_id %lld
+fs_read_stream
+%s:%d: Failed to lookup an extent %lld@%lld in inode %lld in APFS Fusion: %s (%d)
+%s:%d: got err %d reading at pos %lld in obj-id %lld (blkcount %zd, len %zd)
+%s:%d: get_cp_class_for_crypto_id failed (crypto id %llu, ret %d)
+fs_remove_xattr
+%s:%d: xattr %lld:%s err %d decrementing crypto state id %lld (xattr dstream id %lld)
+tail hole amount went negative (ino %lld boundary %lld amount %llu size %llu alloced_size %llu bytes %lld)
+no-name
+%s:%d: Sparse bytes removed from inode %lld internal flags: 0x%llx iflags 0x%llx (tail-hole: %lld:%lld), new_sparse_bytes %lld; name %s parent-id %lld), but it wasn't marked sparse.
+update_sparse_bytes
+%s:%d: Sparse bytes removed from inode %lld that didn't have an extended field.
+%s:%d: Failed to remove sparse bytes attribute from ino %lld, but it was successfully got, errro %d
+%s:%d: Couldn't set sparse bytes extended attribute on ino %lld, error %d
+%s:%d: failed to get dstream when unretaining %llu for ino %llu
+is_retainable
+%s:%d: snap_meta %lld is dataless
+fs_snapshot_tidemark
+%s:%d: Couldn't get snapshot extentref tree, oid %lld, sblock_oid %lld, name '%s', err %d
+%s:%d: extent ends at %llu size=%lld refcnt=%d
+%s:%d: extentref_tree %lld, type not supported (0x%x, not BTREE)
+%s:%d: btree_iterate_nodes for extent_ref_tree %lld failed %d
+%s:%d: omap_check_range_mappings for apfs %lld failed %d
+%s:%d: failed to get mapping tree, error: %d
+fs_clear_zero_ref_extents
+%s:%d: Lookup for physical extent %lld, failed with error %d
+%s:%d: failed to remove the physical extent @ %lld (ret %d)
+%s:%d: failed to free space %lld, %lld (ret %d)
+%s:%d: fs_tx_leave failed with error %d
+%s:%d: failed to fetch sub-dir ino %lld
+fs_adjust_dir_stat_keys
+%s:%d: failed to calculate hierarchy size while setting maintain-dir-size (ino %lld)
+set_maintain_dir_size
+%s:%d: will chain updates on %lld back up to dstats-key: %lld
+%s:%d: failed to insert dstats object on ino %lld!
+%s:%d: dir %lld flagged as dir-size-origin but has no dir-size key!
+get_dir_size
+fs_calculate_dir_size
+%s:%d: can't start a non-delete txn (type %d free blocks %lld threshold_blocks %lld; tail reserve count %lld)
+fs_tx_enter_recursively
+%s:%d: ENOSPC: ttype %d cur_reserve %lld num_blocks %lld free_blocks %lld num_records %lld num_data_blocks %lld num_active_txns %d (tail reserve count: %lld)
+%s:%d: tx_enter() failed: %d
+%s:%d: old reserve was %lld, num_blocks %lld.  cur_block_reserve %lld num_active_txns=%d
+fs_tx_leave
+%s:%d: tx_leave failed: %d
+%s:%d: couldn't freeze the file system (error %d)
+fs_tx_freeze
+%s:%d: couldn't thaw the file system (error %d)
+fs_tx_thaw
+%s:%d: *** Cleaning purgatory removed %lld entries but found %lld BAD entries
+cleanup_purgatory_dir
+%s%s%llx
+%s:%d: Couldn't rename snap %llx to %s
+move_snapshot_to_purgatory
+%s:%d: failed to get fsys idx=%u oid=%llu: %d
+apfs_deletefs
+%s:%d: nx and apfs superblock disagree on fs_idx, nx_idx=%u, nx_oid=%llu, apfs_idx=%u
+%s:%d: already mounted/deleting
+%s:%d: failed to enter transaction: %d
+%s:%d: failed to mark the apfs_t for modification (error %d).
+%s:%d: failed to add file system to reaper: %d
+%s:%d: unsupported apfs_readonly_compatible_features (%llx): mount r/o
+apfs_mount_livefs
+%s:%d: failed to fs root tree (error %d)
+%s:%d: Couldn't enter TX on mount for demo mode: %d
+%s:%d: Couldn't create extentref tree for demo mode: %d
+%s:%d: failed to fetch the extentref tree (error %d)
+%s:%d: failed to get fsys oid %lld: %d
+apfs_mount
+%s:%d: unsupported apfs_incompatible_features (%llx): unable to mount
+%s:%d: Failed to unwrap metadata crypto state: %d
+%s:%d: Volume role %d is not allowed
+apfs_is_volume_role_allowed
+%s:%d: Failed to get fsys oid %lld - %s
+%s:%d: Volume role %d already exists in container uuid %s
+untitled
+%s:%d: encrypted fs can't use mtree, using btree instead
+apfs_newfs
+%s:%d: fs tree type 0x%x invalid, using virtual btree instead
+%s:%d: extentref tree type 0x%x invalid, using physical btree instead
+%s:%d: snapmeta tree type 0x%x invalid, using physical btree instead
+%s:%d: no space for a new file system (slot %d, max %d)
+%s:%d: existing file system (slot %d)
+%s:%d: failed to create fs: %d
+%s:%d: Could not set fs bounds for guarantee %lld and quota %lld: %d
+%s:%d: FS will be effaceable.
+%s:%d: FS will NOT be encrypted.
+%s:%d: unable to create/store metadata crypto (%d)
+%s:%d: fs omap initialization failed: %d
+%s:%d: fs root tree creation failed: %d
+%s:%d: fs snapshot metadata tree creation failed: %d
+%s:%d: fs root dir creation failed: %d
+%s:%d: fs private dir creation failed: %d
+%s:%d: fs creation failed: %d ... cleaning up...
+%s:%d: failed to get fs snap metadata tree after fs creation failed: %d
+%s:%d: failed to delete fs snap metadata tree after fs creation failed: %d
+%s:%d: failed to get fs extentref tree after fs creation failed: %d
+%s:%d: failed to delete fs extentref tree after fs creation failed: %d
+%s:%d: failed to get fs root tree after fs creation failed: %d
+%s:%d: failed to delete fs root tree after fs creation failed: %d
+%s:%d: failed to destroy omap after fs creation failed: %d
+%s:%d: tx_leave() failed: %d
+%s:%d: Unable to remove Fusion MT mapping for LBA %llx, size %llu : %d %s
+apfs_free_data_blocks
+%s:%d: spaceman_free failed for LBA %llx, size %llu : %d %s
+%s:%d: ***: unknown obj type %d
+val_size_for_jobj
+%s:%d: don't know how to merge refcounts on objects of type %d
+jobj_refcnt_merge
+%s:%d: *** unknown obj type %d
+jobj_size_for_key_val
+%s:%d: Couldn't remove extent at pbn %llu, err=%d
+insert_phys_extent
+%s:%d: key @ %p key.hdr.obj_id %lld val @ %p val.kind %d refcnt %d owning_obj_id 0x%llx
+kind == NEW && refcnt = %d
+key.hdr.kind != NEW && numsnapshots == 0
+%s:%d: Couldn't insert extent, err=%d
+%s:%d: failed to change protection class on default_crypto_id %lld (ret %d, prot_class %d) on ino %lld
+change_dstream_prot_class
+%s:%d: failed to convert the default crypto id on ino %lld/%lld (default_crypto_id %lld)
+%s:%d: failed to change protection class on file extent crypto_id %lld (ret %d, prot_class %d) on ino %lld
+%s:%d: %s only collected %d crypto state, ino %llu, err %d
+iterate_ino_crypto_state
+%s:%d: failed to unwrap crypto-id %lld for ino %lld
+%s:%d: failed to get ino %lld in dir %lld
+child_remover_cb
+%s:%d: failed to delete dir entry %lld:%s (file-id %lld) ret=%d
+%s:%d: failed to remove ext %lld:%lld for obj %lld (ret %d)
+_remove_extents_of_file_cb
+%s:%d: failed to re-insert ext %lld:%lld for obj %lld (ret %d)
+recursively_remove_extents_of_dir
+%s:%d: failed to get ino %lld
+extent_remover_callback
+%s:%d: error %d while removing extents on %lld
+%s:%d: failed to update dstream id %lld err %d
+decrement_dstream_id_for_deletion
+%s:%d: restoring refcnt on dstream_id %lld
+%s:%d: error %d removing purgatory entry %lld/%s for ino %lld
+remove_purgatory_entry
+decrement_dstream_id_refcnt
+%s:%d: failed to get cp class of xdstream default crypto id (%llu)
+xattr_cloner
+%s:%d: failed to get a new default crypto-id while cloning ea's for %lld (source %lld)
+%s:%d: failed to clone xattr %lld:%s (source %lld) err %d
+%s:%d: tree_iterator_init() on delta_tree (oid %lld) returned %d
+process_snapshot_phys_extents
+%s:%d: Couldn't update an extent in delta_tree (oid %lld), err %d
+%s:%d: Couldn't delete an extent from delta_tree (oid %lld), err %d
+%s:%d: apfs_update_phys_range() on next_tree (oid %lld) returned %d!
+%s:%d: tree creation failed: %d
+create_empty_extentref_tree
+%s:%d: free'ing allocated extents for snap_xid %llu
+revert_extents_iterator
+%s:%d: failed to get the snapshot blockref tree for delta_tree_oid %lld!
+free_allocated_snapshot_extents
+%s:%d: processed %d extents and free'd %lld blocks
+%s:%d: couldn't get tree, err %d
+delete_extentref_tree
+%s:%d: couldn't delete tree, err %d
+%s:%d: Failed to insert new dir_rec for %s (fid %lld) in parent-dir 0x%.16llx (ret %d)
+clone_item
+%s:%d: clone %lld has a dir-size-key (%lld) but internal_flags are wrong (0x%llx)
+%s:%d: failed to get dir-size-key for ino %lld
+%s:%d: *** failed to update source %lld
+%s:%d: failed to get new crypto id for clone ino %lld (cret %d; clone prot class %d; source prot class %d)
+%s:%d: *** failed to insert clone inode %lld (dir %lld/%s, ret %d)
+%s:%d: *** failed to set dest dstream on ino %lld (from %lld, ret = %d)
+clone_inode
+%s:%d: source inode(%lld) marked sparse, but missing extended field
+%s:%d: failed to set sparse byte count on inode %lld
+%s:%d: obj-id %lld is not a dir-rec and should be (type=%d)
+clone_children_cb
+%s:%d: !! failed cloning ino %lld into dir %lld/%s (err %d)!!
+%s:%d: xattr id %llu name %s: xdstream id %llu size %llu alloced_size %llu default_crypto_id %llu (hash ref count %x)
+dump_extents_of_xattr
+%s:%d: failed to lookup pos %lld in obj-id %lld
+zero_tail_of_last_block
+%s:%d: BUG BUG BUG: ino %lld non-contiguous extents! prev_fext %lld:%lld (%lld) and orig_fext %lld:%lld (%lld)
+fs_make_hole_range_writable
+%s:%d: failed to get a new default crypto-id, ino %lld
+_fs_add_xattr
+%s:%d: found node %lld
+%lld beyond tidemark %lld
+fs_tree_nodes_tidemark_cb
+%s:%d: dstream_evict_range %lld failed with error %d
+dstream_evict_scanner
+dstream_evict_range
+%s:%d: extent_evict_range %lld failed with error %d
+extent_evict_scanner
+extent_evict_range
+%s:%d: tree_create failed: %d - %s
+%s:%d: evict_map_phys_ext failed with error %d
+%s:%d: fext_collector failed with error %d
+%s:%d: lookup_mapping for key %lld failed with error %d
+%s:%d: extent begins before blocked out range, no need to add a new physical extent
+%s:%d: extent ends after blocked out range, need to increase ref count for the physical range outside the blocked out range
+%s:%d: failed to increment the physical extent refcount on %lld:%lld ret %d
+%s:%d: failed to increment the crypto state refcount for crypto_id %lld, ret %d
+%s:%d: failed to insert logical extent for dstream %lld @ logical offset %lld, error %d
+%s:%d: failed to decrement the physical extent refcount on %lld:%lld ret %d
+%s:%d: failed to remove logical extent on %lld:%lld ret %d
+%s:%d: failed to decrement the crypto state refcount for crypto_id %lld, ret %d
+%s:%d: Error allocating %d bytes for data copy
+evict_map_range
+%s:%d: Lookup for physical extent %lld, failed
+%s:%d: spaceman_alloc failed with error %d
+%s:%d: Failed to free mapping address %lld just allocated
+%s:%d: Data could not be copied from original extent to new extent, error %d
+%s:%d: Failed to remove mapping address %lld just allocated from mapping tree
+%s:%d: failed to insert new physical extent addr %lld, len %lld, err = %d
+%s:%d: error looking up dstats %llu for ino %llu
+fs_adjust_dir_stat_keys_cb
+%s:%d: error getting dstats key for ino %llu
+%s:%d: failed to fetch ino %lld
+_get_dstats_cb
+clone-
+defrag-
+pinning-mover-
+xattr-dstream-
+com.apple.apfs.purgatory.
+%s:%d: find_next_snap(%llu) returned %d
+orphan_snap_check_iterator
+%s:%d: snap xid %llu is an orphan... moving it to purgatory
+%s:%d: Couldn't move snap xid %llu to purgatory, err %d
+System
+%s:%d: fs_alloc_count mismatch: fs root nodes %lld extent %lld omap %lld snap_meta %lld udata: %lld fs_alloc_count %lld
+sanity_check_alloced_blocks
+fixup-hardlink-progress
+%s:%d: restarting fixup hardlink scan from obj-id %lld
+fixup_hardlinks
+%s:%d: Fixing hard links on volume: %s
+%s:%d: Processed %8lld records. Fixed %lld hard links
+%s:%d: Failed to insert sibling map for %lld (ino %lld) : err %d
+%s:%d: Failed to start txn to insert sibling map for %lld (ino %lld) : err %d
+%s:%d: Fixed up %lld hard links (%lld total records) on volume: %s
+Checking volume.
+Rechecking volume.
+Repairing volume.
+The volume %s appears to be OK.
+The volume %s was repaired successfully.
+The volume %s could not be verified completely.
+The volume %s could not be verified completely and can not be repaired.
+The volume %s was found corrupt and can not be repaired.
+The volume %s was found corrupt and needs to be repaired.
+The volume %s could not be repaired.
+The volume %s cannot be repaired when it is in use.
+The volume %s cannot be verified when it is in use.
+File/folder %s may be damaged.
+File/folder %s could not be repaired.
+The volume %s could not be repaired after %d attempts.
+Look for missing items in %s directory.
+Look for links to corrupt files in %s directory.
+Executing %s (version %s).
+%s:%d: mtree unable to get level %d btree: %d
+mtree_checkpoint_traverse
+%s:%d: mtree unable to checkpoint level %d btree: %d
+%s:%d: mtree unable to get ephemeral changes tree OID %lld, error %d
+mtree_checkpoint_fixup
+%s:%d: mtree unable to fix up contents of ephemeral changes tree OID %lld, error %d
+%s:%d: mtree unable to get level %d tree OID %lld, error %d
+%s:%d: mtree unable to fix up contents of level %d tree OID %lld, error %d
+%s:%d: failed to delete ephemeral changes tree: %d
+mtree_store_ephemeral
+%s:%d: failed to store ephemeral tree: %d
+mtree_check_ephemeral
+%s:%d: failed to remove key in base tree: %d
+mtree_merge
+%s:%d: failed to insert key in base tree: %d
+%s:%d: failed to delete ephemeral level %d tree: %d
+%s:%d: error adding mtree 0x%llx type 0x%x to reap list: %d
+mtree_delete
+%s:%d: obj_modify failed with error: %d
+mtree_evict_range
+%s:%d: mtree_evict_range failed to get level %d mtree: %d
+%s:%d: btree_evict_range of level %d btree failed: %d
+%s:%d: mtree print failed to get in-memory btree: %d
+mtree_print
+%s:%d: mtree check failed to get level %d btree: %d
+%s:%d: btree_get failed: %d
+mtree_entry_size_check
+%s:%d: mtree check failed to get in-memory btree: %d
+mtree_check
+%s:%d: ephemeral: 
+%s:%d: mtree check of in-memory btree failed: %d
+%s:%d: level %2d : 
+%s:%d: mtree check of level %d btree failed: %d
+%s:%d: error adding key to temporary key tree: %d
+mtree_recent_sanity_callback
+%s:%d: failed to get in-memory btree: %d
+mtree_check_recent_sanity
+%s:%d: check of in-memory btree failed: %d
+%s:%d: failed to get level %d btree: %d
+%s:%d: check of level %d btree failed: %d
+mtree_sanity_check
+mtree_reap
+%s:%d: failed to get ephemeral tree for deletion: %d
+%s:%d: failed to get tree for deletion: %d
+%s:%d: tree delete failed: %d
+%s:%d: failed to write superblock to fusion tier2 device block 0: %d
+nx_fusion_superblock_write
+%s:%d: unable to get fs object 0x%llx: %d
+nx_reaper_obj_get
+%s:%d: unable to get object 0x%llx: %d
+%s:%d: reap list expected %u objects, but haven't seen last reap list object yet
+nx_reaper_checkpoint_traverse
+%s:%d: reap list expected %u objects, but got last reap list object with %u more objects left
+%s:%d: failed to get object oid %lld
+nx_reaper_checkpoint_fixup
+%s:%d: failed to fix up contents of object oid %lld
+%s:%d: Invalid reap list entry nrl_entries[%d].nrle_next = %d
+%s:%d: object type 0x%x not reapable: %d
+nx_reaper_add
+%s:%d: failed to create reap list: %d
+%s:%d: failed to get reap list tail: %d
+%s:%d: reap list object free list erroneously empty?
+nx_reaper_add_sub_object
+%s:%d: failed to get reap list head: %d
+%lld:%lld
+nx_metadata_fragmented_sanity_check
+nx_unblock_physical_range
+%s:%d: fs_clear_zero_ref_extents failed with error: %d
+%s:%d: failed to delete mapping, error: %d
+%s:%d: spaceman_unset_block_out_range failed with error %u
+%s:%d: tx_leave failed with error: %d
+%s:%d: spaceman_get() failed: %d
+nx_resize
+%s:%d: Container is fused, resizing the main tier is not supported
+%s:%d: Container has fragmented metadata
+%s:%d: error calculating metadata params for new block count %lld+%lld: %d
+%s:%d: nx_resize: %s %sfusion %lld+%lld -> %lld+%lld
+shrinking
+growing
+%s:%d: nx_resize: %lld -> %lld, total required metadata %lld blocks
+%s:%d: nx_find_clear_range_for_metadata() error: %d
+%s:%d: nx_resize() shrinking:%c retrying:%c, setting block-out prange to %llu+%llu
+%s:%d: block_out_physical_range failed, error %d
+%s:%d: tx_freeze error: %d
+%s:%d: object cache flush failed to flush %d objects
+%s:%d: spaceman_fq_tree_get(SFQ_IP) failed: %d
+%s:%d: can't shrink max_file_systems from %u to %u
+%s:%d: not enough free space %lld to hold new metadata %lld
+%s:%d: find_new_metadata(available_block_index %lld, resize_block_count[tier %d] %lld)
+%s:%d: error finding new metadata space: %d
+%s:%d: find_new_metadata(): [%lld]@%lld, [%lld]@%lld, [%lld]@%lld, [%lld]@%lld
+%s:%d: error resizing spaceman: %d
+%s:%d: error allocating %lld blocks @ %lld for new checkpoint descriptor area: %d
+%s:%d: new checkpoint descriptor area (%lld blocks) moved from %lld to %lld
+%s:%d: error allocating %lld blocks @ %lld for new checkpoint data area: %d
+%s:%d: new checkpoint data area (%lld blocks) moved from %lld to %lld
+%s:%d: error allocating %lld blocks @ %lld for new spaceman internal pool bitmaps: %d
+%s:%d: new spaceman internal pool bitmap area (%lld blocks) moved from %lld to %lld
+%s:%d: error allocating %lld blocks @ %lld for new spaceman internal pool: %d
+%s:%d: new spaceman internal pool (%lld blocks) moved from %lld to %lld
+%s:%d: failed to load container metadata ranges (overlap?): %d
+%s:%d: freeing old checkpoint descriptor area 0x%llx:0x%x failed: %d
+%s:%d: freeing old checkpoint data area 0x%llx:0x%x failed: %d
+%s:%d: freeing old spaceman IP bitmap area 0x%llx:0x%x failed: %d
+%s:%d: freeing old spaceman IP area 0x%llx:0x%llx failed: %d
+%s:%d: freeing old spaceman IP free queue tree failed: %d
+%s:%d: tx_finish failed: %d
+%s:%d: failed to write superblock to block 0: %d
+%s:%d: freeing old metadata ranges tree failed: %d
+%s:%d: tx_thaw error: %d
+%s:%d: nx_resize failed with error %u
+nx_get_block_count_per_dev
+nx-omap-lock
+nx-fusion-mt-lock
+nx_reaper_sanity_check
+nx_reap_list_sanity_check
+%s:%d: object type 0x%x not reapable?: %d
+nx_reaper
+%s:%d: unable to get object 0x%llx of type 0x%x: %d
+%s:%d: error reaping object 0x%llx of type 0x%x: %d
+nx_reaper_next_record
+nx_block_out_physical_range_internal
+%s:%d: Requested zero length blocked-out range
+%s:%d: Requested block-out range start %lld is outside %s device size (size=%lld)
+%s:%d: Requested block-out range [%lld,%lld] is outside %s device size (size=%lld)
+%s:%d: Continue eviction (possibly after power fail) %lld+%lld
+%s:%d: NX already has a blocked-out range [%lld,%lld]
+%s:%d: tx_leave failed with error %d
+%s:%d: tx_thaw failed with error %d
+%s:%d: spaceman_set_block_out_range failed with error %d
+%s:%d: nx_check_snapshots_data_location failed with error %d
+%s:%d: Evicting nx keybag.
+%s:%d: nx_keybag_evict failed with error %d
+%s:%d: nx_block_out_physical_range_internal unwrapping volume key
+%s:%d: Evicting apfs keybag.
+%s:%d: apfs_keybag_evict failed with error %d
+%s:%d: Eviction of omap tree failed with error %d
+%s:%d: Eviction of omap mappings failed with error %d
+%s:%d: Couldn't get active extentref tree, error=%d
+%s:%d: Eviction of extent ref tree failed with error %d
+%s:%d: Couldn't get active snap meta tree, error=%d
+%s:%d: Eviction of snap meta tree failed with error %d
+%s:%d: nx_reaper_wait for mapping tree failed with error: %d
+%s:%d: tx_finish failed with error %d
+%s:%d: Blocked out range is not free after eviction
+%s:%d: block_out_range: cleared %lld RC blocks from MT
+%s:%d: block out range eviction suceeded!
+%s:%d: tx_enter failed with error: %d
+%s:%d: nx_block_out_physical_range failed with error %u
+nx_check_snapshots_data_location
+%s:%d: fs %llu has %llu snapshots - verifying no snapshot data is in blocked-out range
+%s:%d: failed to get snapshot meta tree %lld: %d
+%s:%d: tree_iterator_init() for snapmeta %lld, err=%d
+apfs_check_snapshots_extents
+%s:%d: found extent %lld
+%lld overlapping blocked-out range %lld
+%s:%d: found node %lld
+%lld overlapping blocked-out range %lld
+apfs_check_snapshots_btnodes_cb
+%s:%d: unable to get spaceman: %d
+nx_check
+%s:%d: spaceman block size %d doesn't match nx superblock block size %d
+%s:%d: spaceman blocks per chunk is bad: %d
+%s:%d: spaceman chunks per cib is bad: %d
+%s:%d: spaceman cibs per cab is bad: %d
+%s:%d: spaceman block count %lld doesn't match nx superblock block count %lld
+%s:%d: spaceman chunk count is bad: %lld
+%s:%d: spaceman cib count is bad: %d
+%s:%d: spaceman cab count is bad: %d
+%s:%d: spaceman free count is too large: %lld > %lld
+%s:%d: spaceman tier2 chunk count is bad: %lld
+%s:%d: spaceman tier2 cib count is bad: %d
+%s:%d: spaceman tier2 cab count is bad: %d
+%s:%d: spaceman tier2 free count is too large: %lld > %lld
+%s:%d: spaceman IP block count is bad: %lld
+%s:%d: spaceman IP bm block count is bad: %d
+%s:%d: spaceman IP bitmap block count is too large: %d
+%s:%d: spaceman IP bitmap block count is bad: %d
+%s:%d: spaceman IP bm base address is bad: %lld
+%s:%d: spaceman IP base address is bad: %lld
+%s:%d: spaceman IP bitmap block %d xid %lld > spaceman xid %lld
+%s:%d: spaceman IP bitmap block %d index %d out of range
+%s:%d: spaceman IP bitmap unable to get bitmap block %d @ %lld: %d
+%s:%d: spaceman IP bitmap has too many free blocks %lld > %lld
+%s:%d: spaceman IP bitmap free head %d out of range
+%s:%d: spaceman IP bitmap free next %d, value %d invalid
+%s:%d: spaceman IP bitmap next array free count is wrong, %lld != %d
+%s:%d: spaceman IP bitmap free list corrupted, too long, count %lld
+%s:%d: spaceman IP bitmap free list corrupted, too short, count %lld
+%s:%d: spaceman IP free queue count is too large: %lld > %lld
+%s:%d: unable to get spaceman IP free queue tree: %d
+%s:%d: spaceman IP free queue tree sanity check failed: %d
+%s:%d: spaceman IP free queue tree entry %lld:%lld xid larger than spaceman xid %lld
+%s:%d: spaceman IP free queue tree entries out of order: xid %lld < %lld
+%s:%d: spaceman IP free queue tree entries out of order: addr %lld < %lld
+%s:%d: spaceman IP free queue tree entry %lld:%lld %lld addr is bad
+%s:%d: error getting IP block index for spaceman IP free queue tree entry %lld:%lld %lld
+%s:%d: spaceman IP free queue tree entry %lld:%lld %lld end addr is bad
+%s:%d: error getting end block index for spaceman IP free queue tree entry %lld:%lld %lld
+%s:%d: spaceman IP free queue tree iteration aborted with error %d
+%s:%d: spaceman IP free queue count %lld doesn't match count in the free queue: %lld
+%s:%d: unable to read cab %d @ %lld: %d
+%s:%d: cab %d @ %lld cab_cib_count %d invalid
+%s:%d: cab %d xid %lld > spaceman xid %lld
+%s:%d: cab %d index %d should be %d
+%s:%d: cab %d cib count %d should be %d
+%s:%d: spaceman chunk info block %lld addr %lld not within IP block range
+%s:%d: error getting IP block index for spaceman chunk info block %lld addr %lld
+%s:%d: unable to read cib %lld @ %lld: %d
+%s:%d: cib %lld xid %lld > spaceman xid %lld
+%s:%d: cib %lld index %d should be %lld
+%s:%d: cib %lld chunk info count %d should be %lld
+%s:%d: cib %lld cib_chunk_info_count %d invalid
+%s:%d: cib %lld chunk info %d xid %lld > cib xid %lld
+%s:%d: cib %lld chunk info %d addr %lld should be %lld
+%s:%d: cib %lld chunk info %d block count %d should be %d
+%s:%d: cib %lld chunk info %d free count %d > chunk block count %d
+%s:%d: cib %lld ci %d bm addr %lld not within IP block range
+%s:%d: error getting IP block index for cib %lld ci %d bm addr %lld
+%s:%d: cib %lld chunk %d unable to get bitmap block @ %lld: %d
+%s:%d: cib %lld ci %d free count %d doesn't match free bits in bitmap block %lld
+%s:%d: spaceman free count %lld doesn't match free count in chunks %lld
+%s:%d: spaceman free count %lld doesn't match free count in bitmap %lld
+%s:%d: spaceman IP free block count is wrong %lld != %lld
+%s:%d: spaceman free queue count is too large: %lld > %lld
+%s:%d: unable to get spaceman free queue tree: %d
+%s:%d: spaceman free queue tree sanity check failed: %d
+%s:%d: spaceman free queue tree entry %lld:%lld xid larger than spaceman xid %lld
+%s:%d: spaceman free queue tree entries out of order: xid %lld < %lld
+%s:%d: spaceman free queue tree entries out of order: addr %lld < %lld
+%s:%d: spaceman free queue tree entry %lld:%lld %lld addr is bad
+%s:%d: spaceman free queue tree entry %lld:%lld %lld range is bad
+%s:%d: spaceman free queue tree iteration aborted with error %d
+%s:%d: spaceman free queue count %lld doesn't match count in the free queue: %lld
+%s:%d: unable to get reaper: %d
+%s:%d: reaper check failed with error: %d
+%s:%d: unable to get omap: %d
+%s:%d: omap xid %lld > spaceman xid %lld
+%s:%d: omap check failed with error: %d
+%s:%d: unable to get fs[%d] oid %lld, %d
+%s:%d: unable to get fs[%d] omap %lld: %d
+%s:%d: omap check failed for fs[%d] omap %lld: %d
+%s:%d: skipping check of fs[%d] oid %lld fs root tree because it's encrypted
+%s:%d: unable to get fs root tree: %d
+%s:%d: fs root tree xid %lld > spaceman xid %lld
+%s:%d: fs root tree sanity check failed: %d
+%s:%d: unable to get fs extentref tree: %d
+%s:%d: fs extentref tree xid %lld > spaceman xid %lld
+%s:%d: fs extentref tree sanity check failed: %d
+%s:%d: unable to get fs snap meta tree: %d
+%s:%d: fs snap meta tree xid %lld > spaceman xid %lld
+%s:%d: fs snap meta tree sanity check failed: %d
+%s:%d: check of oid:xid %lld:%lld  size %d paddr 0x%llx flags 0x%x failed: %d
+omap_recent_sanity_callback
+nx_check_recent_sanity
+%s:%d: unable to get fs[%d] extentref tree %lld: %d
+%s:%d: fs[%d] extentref tree %lld: %d
+%s:%d: unable to get fs[%d] snap meta tree %lld: %d
+%s:%d: fs[%d] snap meta tree %lld: %d
+%s:%d: unable to get omap tree: %d
+nx_check_recent_sanity_omap
+%s:%d: unable to get omap snapshot tree: %d
+nx_check_omap
+%s:%d: omap snapshot count %d seems excessive
+%s:%d: omap tree xid %lld > spaceman xid %lld
+%s:%d: omap tree sanity check failed: %d
+%s:%d: omap tree entries out of order: oid %lld < %lld
+%s:%d: omap tree entries out of order: oid %lld xid %lld <= lastxid %lld
+%s:%d: omap entry %lld:%lld xid > spaceman xid %lld
+%s:%d: omap entry %lld:%lld unknown flags are set: 0x%x
+%s:%d: omap entry %lld:%lld marks deletion of object with no earlier mappings
+%s:%d: omap entry %lld:%lld beyond deletion entry @ xid %lld
+%s:%d: omap entry %lld:%lld size %d seems excessive
+%s:%d: omap entry %lld:%lld addr %lld size %d is bad
+%s:%d: omap tree type 0x%x is bad
+%s:%d: omap snapshot tree xid %lld > spaceman xid %lld
+%s:%d: omap snapshot tree sanity check failed: %d
+%s:%d: omap snapshot count %d doesn't match snapshot tree record count %lld
+%s:%d: omap snapshot tree type 0x%x is bad
+%s:%d: reaper completed ID 0x%llx not less than next reap ID 0x%llx
+nx_check_reaper
+%s:%d: reaper needs more cowbell, flags 0x%x
+%s:%d: reaper has tail with no head
+%s:%d: reap list object 0x%llx max record count %u not expected value %u
+%s:%d: reap list object 0x%llx record count %d larger than max %d
+%s:%d: reap list object 0x%llx first index %u larger than max %u
+%s:%d: reap list object 0x%llx last index %u larger than max %u
+%s:%d: reap list object 0x%llx free index %u larger than max %u
+%s:%d: last reap list object 0x%llx doesn't match tail 0x%llx
+%s:%d: reap list tail 0x%llx is not last reap list object, next 0x%llx
+%s:%d: couldn't read checkpoint descriptor block %d @ 0x%llx: %d
+nx_checkpoint_find_highest_xid
+%s:%d: found unexpected object type 0x%x @ checkpoint descriptor block %d
+%s:%d: invalid checksum for object type 0x%x @ checkpoint descriptor block %d @ 0x%llx
+%s:%d: found unexpected subtype 0x%x for object type 0x%x @ checkpoint descriptor block %d
+%s:%d: found unexpected xid %lld @ checkpoint descriptor block %d
+nx_check_checkpoint_map_block
+%s:%d: %s<->superblock mismatch on uuid
+nx_superblock_agrees_with_main_superblock
+%s:%d: %s<->superblock mismatch on fusion uuid, tier2=%d
+%s:%d: somehow the %s superblock has a lower XID %lld than the main superblock %lld
+%s:%d: %s<->superblock mismatch on block size: %d %d
+%s:%d: %s<->superblock mismatch on block count: %lld %lld
+%s:%d: %s<->superblock mismatch on checkpoint descriptor block count: %d %d
+%s:%d: %s<->superblock mismatch on checkpoint data block count: %d %d
+%s:%d: %s<->superblock mismatch on checkpoint descriptor base address: %lld %lld
+%s:%d: %s<->superblock mismatch on checkpoint data base address: %lld %lld
+%s:%d: couldn't read checkpoint descriptor block %d @ %lld: %d
+nx_checkpoint_find_valid_checkpoint
+%s:%d: checkpoint superblock %d @ %lld: failed sanity check: %d
+%s:%d: unsupported nx_incompatible_features (0x%llx): unable to mount
+checkpoint
+%s:%d: xid %lld checkpoint superblock index %d doesn't match index block was found at: %d
+%s:%d: xid %lld checkpoint superblock index %d doesn't fit in blocks remaining: %d > %d
+%s:%d: xid %lld at index %d failed to load checkpoint metadata ranges (overlap?): %d
+%s:%d: xid %lld validation failed for checkpoint at index %d: %d
+%s:%d: xid %lld data for checkpoint at index %d couldn't be loaded: %d
+%s:%d: xid %lld failed to fix up checkpoint data: %d
+%s:%d: xid %lld sanity check of recently-changed structures failed: %d
+%s:%d: xid %lld failed to get spaceman: %d
+%s:%d: xid %lld failed to load spaceman metadata ranges (overlap?): %d
+%s:%d: warning: best valid checkpoint xid %lld is less than max free queue oldest xid %lld seen in checkpoint %lld
+%s:%d: device initialization failed: %d
+nx_dev_init
+%s:%d: tier2 device initialization failed: %d
+%s:%d: container block size too small for device block size (%d < %d)
+%s:%d: error: block size %d is not an even multiple of device block size %d
+%s:%d: couldn't allocate memory for superblock of size %d
+%s:%d: couldn't read superblock of size %d
+%s:%d: superblock block size %d not an even multiple of device block size %d
+%s:%d: superblock container size %lld greater than device size(s) %lld
+%s:%d: superblock failed sanity checks: %d
+%s:%d: container block size too small for tier2 device block size (%d < %d)
+%s:%d: failed to set tier2 device: %d
+%s:%d: couldn't read tier2 device superblock of size %d
+tier2-superblock
+%s:%d: tier2 device superblock doesn't agree with main superblock
+nx_kernel_mount
+%s:%d: Container with block size %u cannot be mounted read-write.
+%s:%d: WARNING: Container with block size %u is not supported.
+%s:%d: object cache initialization failed: %d
+%s:%d: object cache bootstrap failed: %d
+%s:%d: fragmented checkpoint area failed sanity check: %d
+%s:%d: failed to allocate buffer for checkpoint superblock
+%s:%d: Storage is untrusted. Container cleanly-unmounted flag ignored
+%s:%d: Checkpoint descriptor length is bad.  Container cleanly-unmounted flag ignored
+%s:%d: Checkpoint data length is bad.  Container cleanly-unmounted flag ignored
+%s:%d: Container cleanly-unmounted flag set.
+%s:%d: failed to scan checkpoint descriptor area for largest xid: %d
+%s:%d: checkpoint descriptor index %d out of range [0...%d]
+%s:%d: checkpoint descriptor block %d is not a valid superblock
+%s:%d: checkpoint descriptor block %d superblock failed sanity checks: %d
+%s:%d: checkpoint descriptor block %d doesn't agree with main superblock
+%s:%d: checkpoint superblock index %d doesn't match index block was found at: %d
+%s:%d: validation failed for checkpoint at index %d: %d
+%s:%d: checkpoint: given checkpoint xid %lld, best xid %lld @ %d
+%s:%d: reloading older checkpoint, checkpoint xid %lld, superblock xid %lld
+%s:%d: data for checkpoint at index %d couldn't be loaded: %d
+%s:%d: failed to fix up checkpoint data: %d
+%s:%d: sanity check of recently-changed structures failed: %d
+%s:%d: checkpoint xid %lld failed to get spaceman: %d
+%s:%d: checkpoint xid %lld failed to load spaceman metadata ranges (overlap?): %d
+%s:%d: Couldn't load checkpoint from cleanly-unmounted state.  Falling back to descriptor scan.
+%s:%d: failed to find valid checkpoint: %d
+%s:%d: checkpoint search: largest xid %lld, best xid %lld @ %d
+%s:%d: reloading after unclean unmount, checkpoint xid %lld, superblock xid %lld
+%s:%d: unsupported nx_readonly_compatible_features (0x%llx): mount r/o
+%s:%d: failed to set up spaceman for demo mode: %d
+%s:%d: tx manager initialization failed: %d
+%s:%d: sanity checking all nx state... please be patient.
+%s:%d: failed nx_check sanity: %d
+%s:%d: failed to set up sm allocation metadata: %d
+%s:%d: Unable to retrieve the Fusion WBC instance object: %d
+%s:%d: nx_unblock_physical_range failed with error: %d
+%s:%d: couldn't allocate memory for checkpoint map block
+nx_checkpoint_load_data
+%s:%d: couldn't read checkpoint descriptor map block %d @ %lld: %d
+%s:%d: couldn't read checkpoint data block %d @ %lld: %d
+%s:%d: unexpected checkpoint map entry address: 0x%llx, expected 0x%llx
+%s:%d: checkpoint mapping (%d,%d) extends beyond checkpoint data range: %d,%d
+%s:%d: failed to load checkpoint data of type 0x%x:0x%x @ %lld
+%s:%d: failed to get spaceman oid %lld: %d
+nx_checkpoint_fixup
+%s:%d: unable to get spaceman IP free queue tree OID %lld, error %d
+%s:%d: spaceman unable to fix up contents of spaceman IP free queue tree OID %lld, error %d
+%s:%d: unable to get spaceman free queue tree OID %lld, error %d
+%s:%d: spaceman unable to fix up contents of spaceman free queue tree OID %lld, error %d
+%s:%d: unable to get spaceman tier2 free queue tree OID %lld, error %d
+%s:%d: spaceman unable to fix up contents of spaceman tier2 free queue tree OID %lld, error %d
+%s:%d: failed to get omap oid %lld: %d
+%s:%d: unable to fix up contents of omap, error %d
+%s:%d: failed to get reaper oid %lld: %d
+%s:%d: unable to fix up contents of reaper, error %d
+%s:%d: failed to get fs[%d] oid %lld: %d
+%s:%d: failed to fix up fs[%d] oid %lld: %d
+%s:%d: unable to get test object 0x%llx of type 0x%x/0x%x: %d
+%s:%d: failed to fix up test object 0x%llx of type 0x%x/0x%x: %d
+%s:%d: *** trim'ing free blocks returned: %d
+nx_mount_initiate_free_space_trims
+%s:%d: can't get features for device (%s)
+io_get_device_features
+%s:%d: can't get writable for device (%s)
+IOMedia
+BSD Major
+BSD Minor
+%s:%d: fd %d is type %o rdev %d (%d, %d): I/O registry entry not found
+Removable
+Protocol Characteristics
+Physical Interconnect Location
+Internal
+IOBlockStorageDevice
+image-format-read-only
+btn: invalid btn_btree.bt_fixed.bt_flags (0x%x)
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_tree.c
+btn: invalid btn_btree.bt_fixed.bt_flags (0x%x), given mt_btflags
+btn: invalid btn_btree.bt_fixed.bt_node_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_node_size (%u), given mt_node_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_key_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_key_size (%u), given btn_flags (0x%x)
+btn: invalid btn_btree.bt_fixed.bt_key_size (%u), given btn_btree.bt_fixed.bt_flags (0x%x)
+btn: invalid btn_btree.bt_fixed.bt_key_size (%u), given mt_key_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_val_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_val_size (%u), given mt_val_size (%u)
+btn: invalid btn_flags (0x%x)
+btn: key (%u) compare error: %d
+btn:3: invalid key order (%u) oid %lld / oxid %lld
+btn: invalid btn_btree.bt_longest_key (%u)
+btn: invalid btn_btree.bt_longest_key (%u), given btn_btree.bt_fixed.bt_key_size (%u)
+btn: invalid btn_btree.bt_longest_val (%u)
+btn: invalid btn_btree.bt_longest_val (%u), given btn_btree.bt_fixed.bt_val_size (%u)
+btn: invalid btn_btree.bt_key_count (%llu)
+btn: invalid btn_btree.bt_node_count (%llu)
+btree: invalid btn_level (%u, %u)
+Fix btree: btn_level (%u)? 
+btn: invalid btn_flags (0x%x), given btn_level (%u)
+btn: invalid btn_flags (0x%x), given btn_btree.bt_fixed.bt_key_size (%u) and btn_btree.bt_fixed.bt_val_size (%u)
+btn: invalid btn_btree.bt_fixed.bt_val_size (%u), given btn_flags (0x%x)
+btn: invalid btn_table_space.len (%u)
+btn: invalid btn_nkeys (%u)
+btn: invalid btn_nkeys (%u), given btn_flags (0x%x) (oid %lld)
+btn: validate_loc_ctx_alloc failed for btn_nkeys (%u)
+btn: invalid btn_table_space (%u, %u)
+btn: invalid btn_table_space (%u, %u), given btn_flags (0x%x)
+btn: invalid btn_free_space (%u, %u)
+btn: invalid btn_key_free_list offset %u
+btn: invalid btn_key_free_list entry (%u, %u)
+btn: invalid btn_key_free_list length (%u), given total key length (%u) (oid %lld)
+btn: invalid btn_val_free_list offset %u
+btn: invalid btn_val_free_list entry (%u, %u)
+btn: invalid btn_val_free_list length (%u), given total value length (%u) (oid %lld)
+btn: invalid key (%u, %u)
+btn: invalid value (%u, %u)
+btn: invalid btn_free_space (%u, %u), given total key length (%u) (oid %lld)
+btn: invalid btn_free_space (%u, %u), given total value length (%u) (%d %d %d = %d) (oid %lld)
+btn: invalid btn_key_free_list, btn_val_free_list, or btn_free_space
+btn: invalid btn_btree.bt_key_count (overflow)
+btn: invalid btn_btree.bt_node_count (overflow)
+btn: invalid cpm_size or ov_size (%u), given btn_btree.bt_fixed.bt_node_size (%u)
+btn:1: invalid key order (%u) oid %lld / oxid %lld
+btn:2: invalid key order (%u) oid %lld / oxid %lld
+mt: invalid mt_flags (0x%x)
+mt: invalid mt_flags (0x%x), given om_tree_type
+mt: invalid mt_btflags (0x%x)
+mt: invalid mt_node_size (%u)
+mt: invalid mt_node_size (%u), given nx_block_size (%u)
+mt: invalid mt_max_levels (%u)
+mt: invalid mt_key_size (%u)
+mt: invalid mt_key_size (%u), given mt_btflags (0x%x)
+mt: invalid mt_key_size (%u), given mt_max_levels (%u)
+mt: invalid mt_key_size (%u), given omap_key (%u)
+mt: invalid mt_val_size (%u)
+mt: invalid mt_val_size (%u), given omap_val (%u)
+mt: invalid mt_pad (%u)
+mt: invalid mt_level_count (%u)
+mt: invalid mt_merging (%u)
+mt: invalid mt_merge_key_len (%u)
+mt: invalid mt_merge_key_len (%u), given mt_key_size (%u)
+mt: invalid mt_merge_key_len (%u), given mt_max_levels (%u)
+%04x:  
+object-cache-lock
+object-cache-read-dummy-lock
+%s:%d: obj %p oid %lld has flags 0x%llx and isn't dirty!
+obj_cache_flush
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error writing %d
+%s:%d: Unflushed objects remain after flushing all, oc_phys_dirty_count %u, oc_dirty_count %u
+%s:%d: removing reverted fs objects for fs %lld: %lld - %lld
+obj_cache_remove_reverted_fs_objects
+%s:%d: danger: oid %lld type 0x%x/0x%x flags 0x%llx xid %lld refs %d - is dirty
+%s:%d: danger: oid %lld type 0x%x/0x%x flags 0x%llx xid %lld refs %d - has refs
+%s:%d: unreserving %lld blocks for reverted fs objects for fs %lld
+%s:%d: error unreserving space, %lld blocks: %d
+%s:%d: error unreserving tier2 space, %lld blocks: %d
+can not delete an object w/a non-current xid %lld o == %p
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error getting mapping to free %d
+obj_delete
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error deleting mapping %d
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error freeing space %d
+obj_delete_and_free_by_oid
+%s:%d: oid 0x%llx flags 0x%x type 0x%x error freeing space %d
+%s:%d: oid 0x%llx flags 0x%x type 0x%x error getting mapping to free %d
+%s:%d: oid 0x%llx flags 0x%x type 0x%x error deleting mapping %d
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/nx/obj.c
+obj_get
+obj_checkpoint_get
+Reference count overflowed for object %p!
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error unreserving space on non-dirty release: %d
+obj_release
+%s:%d: invalid flags: 0x%x
+obj_lock
+obj_unlock
+can't modify o %p on unmounted fs %p
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error reserving %d blocks of space: %d
+obj_modify
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error allocating new location %d
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error freeing old space @ 0x%llx: %d
+obj_checkpoint_start
+obj_checkpoint_done
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x non-virtual object missing paddr!
+obj_read
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x paddr 0x%llx error verifying checksum
+%s:%d: obj %lld previously failed to be written for fs %p.  returning EIO
+obj_write
+can not write an object for a fs that is unmounted! (apfs %p o %p)
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error getting mapping to write %d
+%s:%d: oid %lld flags 0x%llx type 0x%x/0x%x xid %lld (cur xid %lld) error allocating space to write %d; blkcount %d (o_size_phys %d) paddr %lld
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error setting mapping for write %d
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error reverting space allocation %d, blkcount %d
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error deleting old mapping %d
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error freeing old location %d
+%s:%d: failed: cksum 0x%016llx, oid 0x%llx, size %d
+obj_checksum_verify
+flush_obj_array
+%s:%d: flags 0x%x type 0x%x/0x%x error allocating new physical location %d
+obj_create_internal
+%s:%d: flags 0x%x type 0x%x/0x%x error reserving %d blocks of space: %d
+object-lock
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x error destroying: %d
+obj_alloc
+obj_destroy
+deleted object @ %p can not be dirtied!! (flags: 0x%llx)
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x bad dirty xid: 0x%llx
+obj_dirty_locked
+%s:%d: oid 0x%llx flags 0x%llx type 0x%x/0x%x dirty object on the free list?!
+%s%s%s%s%s%lld:%d
+DELETE 
+SAVED 
+ENCRYPTED 
+NOHEAD 
+flags 0x%x%s%s oid %lld
+ DELETED
+ REVERTED
+%s:%d: error adding omap 0x%llx type 0x%x to reap list: %d
+omap_destroy
+%s:%d: failed to get omap tree oid %lld: %d
+omap_checkpoint_fixup
+%s:%d: unable to fix up contents of omap tree OID %lld, error %d
+%s:%d: failed to get omap snapshot tree oid %lld: %d
+%s:%d: unable to fix up contents of omap snapshot tree OID %lld, error %d
+omap_set
+omap_find_next_snapshot_xid
+%s:%d: unable to get snapshot tree: %d
+%s:%d: error searching snapshot tree: %d
+%s:%d: can't revert because a revert is still pending to be cleaned up: %d
+omap_revert_to_snapshot
+%s:%d: unable to create snapshot for reversion: %d
+%s:%d: Unable to look up any snapshot greater than %lld ?: %d
+%s:%d: failed to get omap tree: %d
+omap_evict_state_init
+omap_evict_range
+%s:%d: Must be called for fs only, not for nx
+omap_check_range_mappings
+%s:%d: tree_iterator_init failed with error %d
+%s:%d: snapshot info inconsistent - fs %llu has snapshots, omap sees none
+%s:%d: found mapping for oid %lld at xid %lld to %lld
+%s:%d: found mapping for oid %lld at xid %lld to %lld
+%lld beyond tidemark %lld
+omap_evict_range_mappings
+%s:%d: Error evicting oid %lld, obj_get() returned %d
+%s:%d: Error evicting oid %lld, obj_write() returned %d
+%s:%d: Error entering tx: %d
+omap_conversion
+%s:%d: request to encrypt while already doing different conversion: om_flags 0x%x
+%s:%d: request to decrypt while already doing different conversion: om_flags 0x%x
+%s:%d: request to roll while already doing different conversion: om_flags 0x%x
+%s:%d: failed to get omap tree key count: %d
+%s:%d: tree_lookup_ge() failed with error %d
+%s:%d: Error leaving tx: %d
+%s:%d: obj_modify(apfs): %d
+%s:%d: lookup returned unexpected error while iterating: %d
+%s:%d: Error converting oid %lld xid %lld, obj_get() returned %d
+%s:%d: convert op %d, oid %lld xid %lld, ov flags 0x%x paddr 0x%llx current object: flags 0x%llx paddr 0x%llx, waiting on write
+%s:%d: Error converting oid %lld xid %lld, obj_write() returned %d
+%s:%d: Error converting oid %lld xid %lld, omap lookup latest returned %d
+%s:%d: convert op %d, oid %lld xid %lld, ov flags 0x%x paddr 0x%llx current object: flags 0x%llx paddr 0x%llx, needs rewriting
+%s:%d: Error converting oid %lld xid %lld, omap_set() returned %d
+%s:%d: convert op %d, oid %lld xid %lld, ov flags 0x%x paddr 0x%llx current object: flags 0x%llx paddr 0x%llx -> 0x%llx
+omap-lock
+omap_sanity_check
+%s:%d: failed to get omap tree for reaping: %d
+omap_reap
+%s:%d: spaceman_free(%lld, %lld) failed: %d
+%s:%d: tree_delete() failed: %d
+%s:%d: failed to get omap snapshot tree for reaping: %d
+omap_cleanup
+%s:%d: error modifying omap: %d
+%s:%d: error getting mapping tree: %d
+%s:%d: remove mapping (%lld, %lld) failed: %d
+%s:%d: spaceman_free(%lld, %d) failed: %d
+%s:%d: error updating snapshot tree: %d
+%s:%d: error deleting empty snapshot tree: %d
+%s:%d: unable to create snapshot tree: %d
+_omap_snapshot_create
+%s:%d: error adding snapshot: %d
+_omap_snapshot_delete
+%s:%d: unable to find snapshot %lld: %d
+%s:%d: error adding omap 0x%llx type 0x%x to reap list for cleaning: %d
+blocksize=
+omap=btree
+omap=physical
+omap=ephemeral
+omap=mtree
+defragment=yes
+defragment=no
+fusionlc=yes
+fusionlc=no
+wbcsize=
+maxfs=
+fssize=
+fsreserve=
+fsquota=
+fsindex=
+volname=
+fstree=btree
+fstree=mtree
+encrypted
+effaceable
+case=insensitive
+case=sensitive
+password=
+userquota
+groupquota
+rdonly
+browse
+automounted
+defwrite
+owners
+quarantine
+protect
+skipsanity
+demomode
+%s:%d: WBC area was not allocated on main device
+spaceman_create
+%s:%d: failed to allocate bitmap block from IP bitmap pool: %d
+%s:%d: failed to write cab %d: %d
+%s:%d: failed to initialize cab %d: %d
+%s:%d: failed to initialize cib %d: %d
+%s:%d: failed to write cib %d: %d
+%s:%d: failed to read cab %d: %d
+%s:%d: failed to read cib %d: %d
+%s:%d: failed to allocate block from internal pool: %d
+%s:%d: failed to obj_create a new spaceman structure: %d
+spaceman_resize
+%s:%d: IP bm of current sm %lld is in cache, remove it
+%s:%d: failed to write internal pool bitmap block: error %d
+%s:%d: Cab of current sm %lld is in cache, remove it
+%s:%d: Cab is dirty after cache flush, write it now
+%s:%d: Cib of current sm %lld is in cache, remove it
+%s:%d: Cib is dirty after cache flush, write it now
+%s:%d: Chunk of current sm %lld is in cache, remove it
+%s:%d: Chunk bitmap is dirty after cache flush, write it now
+%s:%d: failed to read chunk %llu bitmap: %d
+%s:%d: failed to write chunk %llu bitmap: %d
+%s:%d: IP free queue tree is too large: %lld nodes (limit %d) xid %lld
+spaceman_checkpoint_traverse
+%s:%d: main free queue tree is too large: %lld nodes (limit %d) xid %lld
+%s:%d: tier2 free queue tree is too large: %lld nodes (limit %d) xid %lld
+%s:%d: range 0x%llx:%lld overlaps with recently-freed range 0x%llx:%lld
+spaceman_fq_tree_insert
+%s:%d: removal of replaced free extent failed: %d
+%s:%d: failed to search bitmap hints: %d
+spaceman_alloc
+%s:%d: skip bad chunk info ci @ block %lld (cib %p) ci_index 0x%x ci_addr 0x%llx (expect 0x%llx)
+%s:%d: failed to free internal pool block %lld: %d
+%s:%d: failed to get bitmap object %lld: %d
+%s:%d: reserved space underflow: %lld (%lld)
+%s:%d: fs reserved space underflow: %lld (%lld)
+%s:%d: attempt to free reserved block(s): 0x%llx:0x%llx, error %d
+spaceman_free
+%s:%d: fs %lld alloc count underflow: %lld (%lld)
+%s:%d: spaceman fs reserve alloc count underflow: %lld (%lld)
+%s:%d: failed to get spaceman structure: %d
+spaceman_is_allocated
+spaceman_unreserve
+%s:%d: file system %lld alloc block count is not zero: %lld/%lld
+spaceman_fs_bounds_clear
+%s:%d: file system %lld fs reserve block count %lld larger than global fs reserve block count %lld
+%s:%d: file system %lld fs reserve alloc count %lld larger than global fs reserve alloc count %lld
+%s:%d: range failed sanity check: %d
+spaceman_set_block_out_range
+%s:%d: max_available_space %lld currently_allocated %lld currently_allocated_in_fixed_fs %lld
+%s:%d: sm_free_count: [MAIN]=%lld, [TIER2]=%lld    sm_reserved_space: [MAIN]=%lld, [TIER2]=%lld
+%s:%d: sm_fs_reserve_block_count %lld, sm_fs_reserve_alloc_count %lld
+%s:%d: requested to evict %lld which is larger than max allowed eviction range %lld
+%s:%d: Free count in blocked-out range %lld, sm objects size %lld, out of %lld
+spaceman_is_block_out_range_free
+%s:%d: no metazone for device %d, of size %llu bytes, block_size %llu
+spaceman_metazone_init
+%s:%d: metazone for device %d of size %llu blocks (encrypted: %lld-%lld unencrypted: %lld-%lld)
+spaceman-lock
+spaceman-ip-lock
+spaceman-free-lock
+spaceman_sanity_check
+spaceman_cab_sanity_check
+spaceman_cib_sanity_check
+spaceman_init_cab
+spaceman_init_cib
+spaceman_allocated
+%s:%d: error getting cab %d @ %lld: %d
+spaceman_iterate_free_extents_internal
+%s:%d: error getting cib %d @ %lld: %d
+%s:%d: error getting cib %d bitmap %d @ %lld: %d
+spaceman_ip_bm_block_alloc
+%s:%d: unable to find free IP block or free pending free IP blocks
+spaceman_ip_block_alloc
+spaceman_ip_bm_block_free
+%s:%d: sfq %d error freeing %lld %lld: %d
+spaceman_free_completed
+%s:%d: sfq %d error removing entry %lld %lld from free queue: %d
+%s:%d: sfq %d error inserting shortened entry %lld %lld into free queue: %d
+%s:%d: attempt to free block(s) outside of internal pool: 0x%llx:0x%llx
+spaceman_ip_freed
+%s:%d: Error mapping freed IP block range 0x%llx:0x%llx to index: %d
+Absurd combination of allocation flags for spaceman %llx
+%s:%d: attempt to free reserved block(s): 0x%llx:0x%llx
+spaceman_freed
+%s:%d: freeing 0x%llx:%lld, but %lld bits are already clear.  Double free?
+%s:%d: block range %lld:%lld out of %s bounds %lld
+spaceman_check_allocation_status_internal
+%s:%d: can't get spaceman %d free queue tree %lld: %d
+%s:%d: error searching spaceman free queue tree: %d
+%s:%d: %lld:%lld error: %d
+/BuildRoot/Library/Caches/com.apple.xbs/Sources/apfs_executables/apfs-748.1.47/fsck_apfs/fsck_verify_space.c
+Overlapping object: (oid : 0x%llx) (type : %u) (subtype : %u), (%llu + %llu)
+object (oid 0x%x): Unable to mark nx superblock range (0x0 + 1) allocated for space verification
+object (oid 0x%llx): Unable to mark nx checkpoint desc range (0x%llx + %u) allocated for space verification
+object (oid 0x%llx): Unable to mark nx checkpoint data range (0x%llx + %u) allocated for space verification
+object (oid 0x%llx): Unable to mark spaceman ip bitmap range (0x%llx + %u) allocated for space verification
+object (oid 0x%llx): Unable to mark spaceman ip range (0x%llx + %llu) allocated for space verification
+object (oid 0x%llx): Unable to mark nx keylocker range (0x%llx + %llu) allocated for space verification 
+object (oid 0x%x): Unable to mark tier2 nx superblock range (0x%llx + 1) allocated for space verification 
+object (oid 0x%llx): Unable to mark fusion WBC range (0x%llx + %llu) allocated for space verification 
+Space Verification: failed to allocate memory for the bitmap block
+Underallocation Detected on %s device: (%llu+%llu) bitmap address (%lld)
+Overallocation Detected on %s device: (%llu+%llu) bitmap address (%lld)
+Space Verification: failed to allocate memory for space verification
+Space Verification: failed to insert node into space verification data structure
+Space Verification: copying of spaceman free tree extent (%lld %llu) to memory failed as end_address overflows unsigned long long
+%s:%d: failed to get wbc list head: %d %s
+fusion_wbc_get_head
+%s:%d: WBC checkpoint op %u returned %d %s
+fusion_wbc_checkpoint_traverse
+%s:%d: Fusion WBC state creation failed: %d
+fusion_create
+%s:%d: Fusion Middle Tree creation failed: %d
+%s:%d: Fusion is started in %s mode
+fusion_wbc_startup
+regular
+%s:%d: Incorrect WBC instance object version: %llu while %lu was expected
+fusion_wbc_init
+%s:%d: WBC instance object corrupted: stableHeadOffset(%llu) > stableTailOffset(%llu)
+%s:%d: WBC instance object corrupted: distance between stableHeadOffset(%llu) and stableTailOffset(%llu) is bigger than WBC cache size: %llu > %llu
+%s:%d: WBC instance object corrupted: number of WBC list objects is larger than WBC cache size: %u > %llu
+%s:%d: WBC instance object corrupted: listHeadOid(0x%llx) is not in the WBC area (0x%llx, %llu)
+%s:%d: WBC instance object corrupted: listTailOid(0x%llx) is not in the WBC area (0x%llx, %llu)
+%s:%d: WBC instance object corrupted: listTailOid == listHeadOid(0x%llx) but the number of list objects(%u) is not 1
+%s:%d: Incorrect WBC List object version: %llu while %lu was expected
+fusion_wbc_list_init
+%s:%d: Incorrect WBC List object @ 0x%llx: indexBegin(%u) > indexEnd(%u)
+%s:%d: Incorrect WBC List object @ 0x%llx: indexEnd(%u) > indexMax(%u)
+%s:%d: Incorrect WBC List object @ 0x%llx, entry# %u: incorrect length (%llu)
+%s:%d: Incorrect WBC List object @ 0x%llx, entry# %u: entry range (0x%llx, %llu) is not completely in the WBC area (0x%llx, %llu)
+%s:%d: Fusion WBC obj_get(%llu) failed with %d %s
+fusion_wbc_get
+tx-mgr-lock
+%s:%d: Trash unfinished tx xid=0x%llx
+tx_mgr_destroy
+%s:%d: Trash unfinished pending tx
+%s:%d: failed to zero checkpoint descriptor block %d @ %lld: %d
+tx_checkpoint_desc_zero
+%s:%d: failed to write checkpoint map block %lld: %d
+tx_checkpoint_write
+%s:%d: error getting next checkpoint map block address %d: %d
+%s:%d: error getting next checkpoint data block address %d: %d
+%s:%d: failed to write checkpoint data block %lld: %d
+%s:%d: waiting for transaction to finish
+tx_unmount
+%s:%d: tx_finish() failed, %d
+%s:%d: failed to flush %d objects
+tx_flush
+%s:%d: failed to get spaceman: %d, tx can't be flushed
+%s:%d: spaceman checkpoint traverse failed: %d, tx can't be flushed
+%s:%d: failed to get omap: %d, tx can't be flushed
+%s:%d: omap checkpoint traverse failed: %d, tx can't be flushed
+%s:%d: failed to get reaper: %d, tx can't be flushed
+%s:%d: nx reaper checkpoint start traverse failed: %d, tx can't be flushed
+%s:%d: Fusion WBC checkpoint start traverse failed: %d, tx can't be flushed
+%s:%d: failed to get fs[%d] oid %lld, %d, tx can't be flushed
+%s:%d: fs[%d] checkpoint start traverse failed: %d, tx can't be flushed
+%s:%d: failed to checkpoint start traverse test object 0x%llx of type 0x%x/0x%x: %d
+%s:%d: error getting first checkpoint map block address %d: %d
+%s:%d: spaceman checkpoint write traverse failed: %d, tx can't be flushed
+%s:%d: omap checkpoint write traverse failed: %d, tx can't be flushed
+%s:%d: nx reaper checkpoint write traverse failed: %d, tx can't be flushed
+%s:%d: Fusion WBC checkpoint write traverse failed: %d, tx can't be flushed
+%s:%d: fs[%d] checkpoint write traverse failed: %d, tx can't be flushed
+%s:%d: failed to checkpoint write test object 0x%llx of type 0x%x/0x%x: %d
+%s:%d: failed to write last checkpoint map block %lld: %d
+%s:%d: spaceman checkpoint done traverse failed: %d, tx can't be flushed
+%s:%d: omap checkpoint done traverse failed: %d, tx can't be flushed
+%s:%d: nx reaper checkpoint done traverse failed: %d, tx can't be flushed
+%s:%d: Fusion WBC checkpoint done traverse failed: %d, tx can't be flushed
+%s:%d: fs[%d] checkpoint done traverse failed: %d, tx can't be flushed
+%s:%d: failed to checkpoint done traverse test object 0x%llx of type 0x%x/0x%x: %d
+%s:%d: error getting next checkpoint superblock address %d: %d
+%s:%d: xid %lld checkpoint descriptor count is larger than expected: %d > %d
+%s:%d: xid %lld checkpoint data block count is larger than expected: %d > %d
+%s:%d: xid %lld checkpoint data block count is not value tracked by cache: %d != %d
+%s:%d: failed to write checkpoint superblock %lld: %d
+%s:%d: failed to write block 0 superblock: %d
+%s:%d: Error: tx[%lld] failed to unclean superblock: %d
+tx_enter_internal
+%s:%d: Error: tx[%lld] failed to start: %d
+%s:%d: waiting for available tx to open: xid %lld
+fsck_apfs completed at %s
+%s: fsck_apfs completed at %s
+UNKNOWN-DEV
+/var/log/fsck_apfs.log
+%s/Library/Logs/fsck_apfs.log
+fsck_apfs started at %s
+%s: fsck_apfs started at %s
+warning: 
+error: 
+Unknown type %d
+%d%d-%d
+vers: %u.%u flags: %#x class: %c os: 
+ revision: %u key len: %u
+obj-id: %8lld type: %-11s
+refcnt %d len %lld owning_obj_id %lld
+num children: %lld total size: %lld gen-count: %lld
+ chained-key: %lld
+private-id: %lld parent-id: %lld cr/mtime: %lld/%lld 
+gen-count: %u nchildren: %d 
+nlink: %d 
+def-prot-class: %d 
+pad1: 0x%x 
+pad2: 0x%llx 
+uid/gid/mode: %d/%d/0x%x bsd_flags: 0x%x internal_flags: 0x%llx name: %s
+NO-NAME
+refcnt: %d 
+file-id: %6lld flags: %d date-added: %lld hash: 0x%x name-len: %d name: %s
+file-id: %6lld flags: %d date-added: %lld name-len: %d name: %s
+sib-id: %lld parent-id: %lld name: %s
+sib-map: %lld
+logical addr: %lld  phys-block-num: %lld  crypto-id: %lld
+flags: 0x%x data-len: %d name: %s
+ out-of-line data size: %lld (under obj-id: %lld / crypto-id: %lld)
+ embedded data size: %d
+refcnt %d
+ extentref_tree_oid: %lld sblock_oid: %lld change_time: %llu create_time: %llu
+ extentref_Tree_type: %u flags: %u name: '%s' name_len: %u
+ name: '%s' name_len: %u snap_xid: %lld
+error %d from cond wait
+%s: %s
+Checking the container superblock.
+Checking the fusion superblock.
+Checking the space manager.
+Checking the object map.
+Checking the snapshots.
+Checking the APFS volume superblock.
+Checking the fsroot tree.
+Checking the extent ref tree.
+Checking the snapshot metadata tree.
+Verifying allocated space.
+Checking the EFI jumpstart record.
+Checking the Fusion data structures.
+Checking the fragmented metadata trees.
+Checking snapshot %ld of %ld.
+Container superblock is invalid.
+Fusion superblock is invalid.
+Space manager is invalid.
+Most recent checkpoint is invalid.
+Object map is invalid.
+Snapshot is invalid.
+Volume superblock is invalid.
+fsroot tree is invalid.
+Extent ref tree is invalid.
+Snapshot metadata tree is invalid.
+Space Verification failed.
+EFI jumpstart record is invalid.
+Fusion data structures are invalid.
+Encryption Rolling data structures are invalid.
+Fragmented metadata trees are invalid.
+* * * cannot allocate memory * * *
+ * * * cannot allocate memory * * *
+VERIFY
+INFORMATION
+REPAIR
+SUCCESS
+DAMAGEINFO
+PROGRESS
+UNKNOWN
+<plist version="1.0">
+<dict>
+<key>%s</key> <string>%s</string>
+fsck_msg_type
+<key>%s</key> <integer>%s</integer>
+fsck_verbosity
+<key>%s</key> <integer>%u</integer>
+fsck_msg_number
+fsck_msg_string
+<key>%s</key>
+parameters
+<array>
+<integer>%d</integer>
+<integer>%ld</integer>
+<string>%s</string>
+<dict><key>%s</key> <string>%s</string></dict>
+directory
+volumename
+fstype
+<integer>%p</integer>
+</array>
+</dict>
+</plist>
+(%c,"%s",%d)
+(%d %%)
+unmount: %s: %s
+rmdir: %s: %s
+dev=%s vers=%s result=%d 
+wr=%d wl=%d
+fp=%d fl=%d 
+Error Info : dev=%s version=%s r=%d fp=%d fl=%d ft=%s
+object (oid 0x%llx): o_cksum (0x%llx) is invalid for object
+object (oid 0x%llx): o_oid invalid
+object (oid 0x%llx): o_xid invalid, o_xid is 0
+object (oid 0x%llx): o_xid invalid, o_xid %llu is greater than nx_next_xid: %llu
+object (oid 0x%llx): o_type invalid, o_type 0x%x should be 0x%x
+object (oid 0x%llx): o_subtype invalid, o_subtype 0x%x should be 0x%x
+object (oid 0x%llx): Unable to mark object range (0x%llx + %u) allocated for space verification 
+apfs object (oid 0x%llx): crypto major version (%u) is not CP_CURRENT (%u)
+apfs object (oid 0x%llx): cpflags (%u) should be 0
+apfs_sb at apfs_fs_index (%u): apfs_magic invalid: %d
+apfs_fs_index (%d) is not valid (%d)
+Fix apfs_fs_index (oid 0x%llx, xid 0x%llx)? 
+apfs_sb at apfs_fs_index (%u): apfs_features has unrecognized features (%llX)
+apfs_sb at apfs_fs_index (%u): apfs_readonly_compatible_features has unsupported flags: (0x%llX)
+apfs_sb at apfs_fs_index (%u): apfs_incompatible_features has unsupported flags: (0x%llX)
+apfs_sb at apfs_fs_index (%u): apfs_unmount_time is invalid (%llu), is greater than current time (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_fs_reserve_block_count (%llu) is greater than nx_block_count (%llu) for a Fixed FS
+apfs_sb at apfs_fs_index (%u): apfs_fs_reserve_block_count (%llu) must not be greater than apfs_fs_quota_block_count (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_fs_quota_block_count (%llu) should not be greater than nx_block_count (%llu) for an FS with quota
+apfs_sb at apfs_fs_index (%u): apfs_fs_alloc_count (%llu) must not be greater than apfs_fs_quota_block_count (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_root_tree_type is invalid: %u
+apfs_sb at apfs_fs_index (%u): apfs_extentref_tree_type is invalid: %u
+apfs_sb at apfs_fs_index (%u): apfs_snap_meta_tree_type is invalid: %u
+apfs_sb at apfs_fs_index (%u): apfs_omap_oid is invalid.
+apfs_sb at apfs_fs_index (%u): apfs_root_tree_oid is invalid.
+apfs_sb at apfs_fs_index (%u): apfs_extentref_tree_oid is invalid.
+apfs_sb at apfs_fs_index (%u): apfs_revert_to_xid is invalid (%llu), should be less than nx_next_xid (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_revert_to_xid is %llu, but sblock oid is invalid
+apfs_sb at apfs_fs_index (%u): apfs_total_blocks_freed (%llu) should not be greater than apfs_total_blocks_alloced (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_vol_uuid is NULL
+apfs_sb at apfs_fs_index (%u): apfs_last_mod_time is invalid (%llu), is greater than current time (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_fs_flags has an unknown flag set 0x%llx
+apfs_sb at apfs_fs_index (%u): apfs_volname[0] == 0
+apfs_sb at apfs_fs_index (%u): apfs_formatted_by.id (%.*s) is not NULL terminated.
+Fix apfs_formatted_by.id (oid 0x%llx, xid 0x%llx)? 
+apfs_sb at apfs_fs_index (%u): apfs_formatted_by.timestamp is invalid (%llu), is greater than current time (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_formatted_by.last_xid (0x%llx) is greater than nx_next_xid (0x%llx)
+apfs_sb at apfs_fs_index (%u): apfs_modified_by[%d].id (%.*s) is not NULL terminated.
+Fix apfs_modified_by[%d].id (oid 0x%llx, xid 0x%llx)? 
+apfs_sb at apfs_fs_index (%u): apfs_modified_by[%d].timestamp is invalid (%llu), is greater than current time (%llu)
+apfs_sb at apfs_fs_index (%u): apfs_modified_by[%d].last_xid is invalid (0x%llx), is greater than nx_next_xid (0x%llx)
+apfs_sb at apfs_fs_index (%u): apfs_volname (%.*s) is not NULL terminated.
+Fix apfs_volname (oid 0x%llx, xid 0x%llx)? 
+apfs_sb at apfs_fs_index (%u): apfs_next_doc_id (%u) should not be less than MIN_DOC_ID (%d)
+apfs_next_obj_id (%llu) is not valid (%llu)
+Fix apfs_next_obj_id (oid 0x%llx, xid 0x%llx)? 
+apfs_num_files (%llu) is not valid (%llu)
+Fix apfs_num_files (oid 0x%llx, xid 0x%llx)? 
+apfs_num_directories (%llu) is not valid (%llu)
+Fix apfs_num_directories (oid 0x%llx, xid 0x%llx)? 
+apfs_num_symlinks (%llu) is not valid (%llu)
+Fix apfs_num_symlinks (oid 0x%llx, xid 0x%llx)? 
+apfs_num_other_fsobjects (%llu) is not valid (%llu)
+Fix apfs_num_other_fsobjects (oid 0x%llx, xid 0x%llx)? 
+apfs_num_snapshots (%llu) is not valid (%llu)
+Fix apfs_num_snapshots (oid 0x%llx, xid 0x%llx)? 
+
+
+nx_sb->nx_o.o_oid != NX_SUPERBLOCK_OID, %llu
+nx_superblock magic number invalid: 0x%X
+nx_block_count is %llu, while device block count is %llu
+nx_features has unsupported flags: (0x%llX)
+nx_read_only_compatible_features has unsupported flags: (0x%llX)
+nx_incompatible_features has unsupported flags: (0x%llX)
+nx_uuid is NULL
+nx_next_oid (%llu) is less than the minimum (%u)
+nx_xp_desc_blocks (%u) is less than 8
+NX checkpoint desc range is invalid: 0x%llx+0x%x
+nx_xp_data_blocks (%u) is less than 8
+NX checkpoint data range is invalid: 0x%llx+0x%x
+nx_xp_desc_next (%u) is larger than the # of nx_xp_desc_blocks (%u)
+nx_xp_data_next (%u) is larger than the # of nx_xp_data_blocks (%u)
+nx_xp_desc_index (%u) is larger than nx_xp_desc_blocks (%u)
+nx_xp_desc_len (%u) is less than 2
+nx_xp_desc_len (%u) is larger than nx_xp_desc_blocks (%u)
+nx_xp_data_index (%u) is is larger than nx_xp_data_blocks (%u)
+nx_xp_data_len (%u) is less than 2
+nx_xp_data_len (%u) is larger than nx_xp_data_blocks (%u)
+nx_spaceman_oid is invalid
+nx_omap_oid is invalid
+nx_reaper_oid (%llu) is less than minimum OID (%d)
+nx_max_file_systems (%u) is invalid
+nx_fs_oid (%llu) at index (%d) is less than minimum OID (%d)
+nx_flags (0x%llx) has an unknown flag set 
+nx_ephemeral_info 0: invalid version (%u), should be: (%d)
+nx_ephemeral_info 0: invalid structures per fs (%u), should be: (%d)
+nx_ephemeral_info 0: invalid minimum block count per structure (%u), should be less than: (%d)
+nx_ephemeral_info %d: invalid info (0x%llx)
+NX keybag data range is invalid: 0x%llx+%llu
+NX blocked out range is invalid: 0x%llx+%llu
+nx_fusion_mt_oid is invalid
+nx_fusion_mt_oid should be invalid but isn't
+nx_fusion_wbc_oid is invalid
+nx_fusion_wbc_oid should be invalid but isn't
+nx_fusion_wbc range is invalid: 0x%llx+%llu
+failed to allocate memory to read the container superblock
+failed to read container superblock
+Device does not contain a valid APFS container.
+nx_block_size of %u is invalid
+
+
+cannot find checkpoint area because container superblock is too damaged
+verification/reading of the spaceman_phys object failed
+cpm_o.o_oid (0x%llx) doesn't match the physical address (0x%llx)
+checkpoint map o_xid (0x%llx) doesn't match checkpoint superblock o_xid (0x%llx)
+cpm_count is 0
+cpm_count (%u) is larger than the max that this block size can accommodate (%u)
+cpm_flags has an unknown flag set 0x%x
+cpm_flags has invalid flags set: 0x%x
+cpm_map[%d].cpm_type storage type (0x%x) != OBJ_EPHEMERAL
+cpm_map[%d].cpm_type object type (0x%x) is invalid!
+cpm_map[%d].cpm_fs_oid (%llu) is less than minimum oid (%u)!
+cpm_map[%d].cpm_oid object type is invalid!
+xp_map->cpm_map[%d].cpm_size is 0
+xp_map->cpm_map[%d].cpm_size (%u) is not a multiple of nx_block_size (%u)
+cpm_map[%d].cpm_paddr (%llu) + cpm_size (%u) is not in the checkpoint data area
+could not look up cpm_map[%d].cpm_paddr (%llu) in checkpoint data area
+nx_xp_data_index (%u) puts the checkpoint data outside of its range
+failed to look up checkpoint block address %d: %s
+dev_read(%llu, 1): %s
+tier2 superblock
+main superblock
+the checkpoint superblock has a lower o_xid (%lld) than the %s (%lld)
+checkpoint<->%s mismatch on nx_block_size: %d %d
+checkpoint<->%s mismatch on nx_block_count: %lld %lld
+checkpoint<->%s mismatch on uuid
+checkpoint<->%s mismatch on fusion uuid
+checkpoint<->%s mismatch on nx_xp_desc_blocks: %d %d
+checkpoint<->%s mismatch on nx_xp_data_blocks: %d %d
+checkpoint<->%s mismatch on nx_xp_desc_base: %lld %lld
+checkpoint<->%s mismatch on nx_xp_data_base: %lld %lld
+checkpoint %d fsck_obj_phys failed
+checkpoint %d obj->o_type is invalid: (0x%x)
+no valid checkpoint found
+failed to look up checkpoint block address: %s
+checkpoint<->superblock disagree for xp %d
+xp_sb->nx_xp_desc_index (%d) doesn't match index block (%d)
+checkpoint %d superblock is invalid
+checkpoint %d checkpoint map is invalid
+malloc(%u)
+no valid checkpoint
+spaceman block size %d doesn't match nx_superblock block size %d
+spaceman block count %llu doesn't match nx_superblock block count %llu
+spaceman blocks per chunk (%d) isn't consistent with block size (%d)
+spaceman chunk count (%llu) is inconsistent with block count (%llu) & blocks per chunk (%u)
+spaceman cib count (%u) is inconsistent with chunk count (%llu) and chunks per cib (%d)
+spaceman tier2 device chunk count (%llu) is inconsistent with block count (%llu) & blocks per chunk (%u)
+spaceman tier2 device cib count (%u) is inconsistent with chunk count (%llu) and chunks per cib (%d)
+spaceman chunks per cib is inconsistent with block size: %d
+spaceman cibs per cab is invalid (%u)
+spaceman cab count (%u) is inconsistent with cib count (%u) and cibs per cab: %u
+spaceman tier2 device cab count (%u) is inconsistent with cib count (%u) and cibs per cab: %u
+spaceman ip block count is bad: %lld
+spaceman ip bm block count is bad: %d
+spaceman IP bitmap range is invalid: 0x%llx+0x%x
+spaceman IP range is invalid: 0x%llx+0x%llx
+spaceman ip bm range (%lld, %lld) overlaps with spaceman ip range (%lld, %lld)
+spaceman free count is too large: %lld > %lld
+spaceman tier2 device free count is too large: %lld > %lld
+spaceman ip bitmap block xid is invalid: %lld > %lld
+spaceman ip bitmap block address is invalid: %hu > %u
+NX checkpoint descriptor area fragmented metadata tree is invalid
+NX checkpoint data area fragmented metadata tree is invalid
+Spaceman internal pool bitmap fragmented metadata tree is invalid
+Spaceman internal pool fragmented metadata tree is invalid
+could not retrieve er_state_phys_t
+er_state magic number is %d, should be %d
+er_state->ersb_version is %d, should be %d
+er_state->ersb_flags is illegal. er_state->ersb_flags is: %llu
+ERSB_FLAG_CID_IS_TWEAK is set but ersb_fext_cid == 0. er_state->ersb_flags: %llu
+er_state->ersb_snap_xid is bigger than the current biggest xid. er_state->ersb_snap_xid: %llu, next xid: %llu
+number of blocks to encrypt is out of bounds. er_state->ersb_total_blk_to_encrypt: %llu, block count: %llu
+er_state->ersb_progress > er_state->ersb_total_blk_to_encrypt. er_state->ersb_progress: %llu, blocks to encrypt: %llu
+er_state->ersb_flags has ERSB_FLAG_PAUSED on but checksum count != 0. er_state->ersb_flags: 0x%llx, er_state->checksum_count: %u
+er_state->checksum_count is out of bounds. er_state->checksum_count: %u, max checksum: %u
+checksum block size is invalid, checksum_block_size enum: %u
+could not retrieve gbitmap from er_state_phys_t
+encryption rolling gbitmap tree is invalid
+failed to allocate memory for fsck_state
+Could not initialize message output
+Could not initialize APFS-specific messages
+dev_is_mounted(%s) failed with error: %s.
+container %s is mounted.
+container %s is mounted with write access. Re-run with (-l) to freeze volume.
+container %s is mounted with write access.
+live repair of a volume in mounted container %s is not supported yet.
+/private/var/vm
+/dev/%ss%d
+asprintf: %s
+nowhere to mount crypto dev
+could not open %s to freeze the volume.
+could not freeze volume (%s)
+device %s failed to open with error: %s.
+Fix corrupt container superblock?
+Fix corrupt 2nd-tier device container superblock?
+crypto dev %s is not mounted.
+Unable to read apfs_keylocker prange for fs (0x%llx) : %s
+object (oid 0x%llx): Unable to mark apfs keylocker range (0x%llx + %llu) allocated for space verification 
+apfs_keylocker.pr_block_count is zero for encrypted fs (0x%llx)
+omap has %llu snaphots but snap meta tree has %llu, assuming max
+QUICKCHECK ONLY; FILESYSTEM DIRTY
+QUICKCHECK ONLY; FILESYSTEM CLEAN
+unexpected key (%u) / val (%u) size in extent list tree
+invalid range: 0x%llx+%llu
+root_device
+Encrypted
+__OSINSTALL_ENVIRONMENT
+/private/var/tmp/RecoveryTemp
+/private/var/tmp
+%s/fsck_apfs.%d
+%s/fsck_apfs.%d.%d
+mkdir: %s: %s
+mount_apfs
+/sbin/mount_apfs
+mount_apfs: %s
+waitpid(mount_apfs) failed (pid=%d, errno=%d)
+mount_apfs didn't exit?
+%s is not encrypted
+%s is not unlocked
+mount_apfs exit status %d
+verification/reading of the EFI jumpstart record failed
+the EFI jumpstart record magic number is invalid: 0x%x
+found EFI jumpstart record of unknown version %d (max known: %d)
+invalid EFI jumpstart record file length: %d
+invalid EFI jumpstart record number of extents: %d
+object (oid 0x%llx): Unable to mark nx_efi_jumpstart range (0x%llx + %llu) allocated for space verification 
+the EFI jumpstart entry has length %u but occupies %llu blocks of size %u
+o/}7~K
+v<y^yey
+n"onq+r"t
+x>yIyHyPyVy]y
+XDYTYbZ([
+dRdVetf
+=N8NAN
+MQTQdQwQ
+4;RFRrRwR
+SISQSZSsS}S
+T8THThT
+n]k]|]
+](^=^i^b8
+`HaLaNaLaza
+c.:id~d
+dwdl:Oele
+g!g^gSg
+TkN<rk
+m>mwmAmimxm
+4m/nnn3=
+=Jp}pwp
+(r5rPr
+>Gt\tqt
+y/A@zJzOz
