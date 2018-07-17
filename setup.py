@@ -12,5 +12,5 @@ setup(name='afro',
           'afro=afro:main',
         ],
       },
-      install_requires=['kaitaistruct', 'colorlog']
+      install_requires=['kaitaistruct', 'colorlog', 'numpy']
 )
