@@ -12,11 +12,17 @@ afro can parse APFS images. It not only extracts the latest data but also older 
 
 ## Usage
 
+### Export partition
+
+AFRO only works on partitions, you can extract a partition using mmcat from the [sleuthkit](https://github.com/sleuthkit/sleuthkit).
+
+    mmcat apfs_image.dmg 4 > apfs_partition.dd
+
 ### Export files
 
 All files of an apfs image can be extracted using the following command:
 
-    afro -e files apfs_image.dmg
+    afro -e files parse apfs_partition.dd
 
 The exported files are saved in a folder named after the image with the suffix '.extracted'. Because APFS images can contain multiple volumes, each volume is extracted into a separate folder inside the '.extracted' folder. Each volume can contain multiple versions of the file system which are stored in separate numbered folders. Inside those folders two folders exists 'private-dir' and 'root'. Those folders are not visible to the user, but exist on every APFS file system.
 
@@ -39,9 +45,9 @@ Example:
 
 To get an overview over the files a body file can be created:
 
-    afro -e bodyfile -e files apfs_image.dmg
+    afro -e bodyfile -e files  parse apfs_partition.dd
 
-More information on the body file format can be found in the [sleuth kit wiki](https://wiki.sleuthkit.org/index.php?title=Body_file). The body file can be further investigated using [mactime](https://wiki.sleuthkit.org/index.php?title=Mactime) and [Timeline Explorer](https://ericzimmerman.github.io/).
+More information on the body file format can be found in the [sleuthkit wiki](https://wiki.sleuthkit.org/index.php?title=Body_file). The body file can be further investigated using [mactime](https://wiki.sleuthkit.org/index.php?title=Mactime) and [Timeline Explorer](https://ericzimmerman.github.io/).
 
 
 ## Documentation on APFS
