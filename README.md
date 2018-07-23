@@ -2,7 +2,7 @@
 
 ![afro logo](logo/afro.png)
 
-afro can parse APFS images. It not only extracts the latest data but also older versions of the files.
+afro can parse APFS volumes. It not only extracts the latest data but also older versions of the files.
 
 ## Installation
 
@@ -12,17 +12,19 @@ afro can parse APFS images. It not only extracts the latest data but also older 
 
 ## Usage
 
+AFRO needs a raw volume as input. The volume can be extracted from a disk image as described below.
+
 ### Export partition
 
-AFRO only works on partitions, you can extract a partition using mmcat from the [sleuthkit](https://github.com/sleuthkit/sleuthkit).
+AFRO only works on volumes, you can extract an APFS volumes from a disk image using mmcat from the [sleuthkit](https://github.com/sleuthkit/sleuthkit).
 
-    mmcat apfs_image.dmg 4 > apfs_partition.dd
+    mmcat apfs_image.dmg 4 > apfs_volume.dd
 
 ### Export files
 
 All files of an apfs image can be extracted using the following command:
 
-    afro -e files parse apfs_partition.dd
+    afro -e files parse apfs_volume.dd
 
 The exported files are saved in a folder named after the image with the suffix '.extracted'. Because APFS images can contain multiple volumes, each volume is extracted into a separate folder inside the '.extracted' folder. Each volume can contain multiple versions of the file system which are stored in separate numbered folders. Inside those folders two folders exists 'private-dir' and 'root'. Those folders are not visible to the user, but exist on every APFS file system.
 
@@ -45,7 +47,7 @@ Example:
 
 To get an overview over the files a body file can be created:
 
-    afro -e bodyfile -e files  parse apfs_partition.dd
+    afro -e bodyfile -e files  parse apfs_volume.dd
 
 More information on the body file format can be found in the [sleuthkit wiki](https://wiki.sleuthkit.org/index.php?title=Body_file). The body file can be further investigated using [mactime](https://wiki.sleuthkit.org/index.php?title=Mactime) and [Timeline Explorer](https://ericzimmerman.github.io/).
 
