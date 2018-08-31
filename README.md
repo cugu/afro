@@ -1,4 +1,4 @@
-# afro (APFS file recovery) ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
+# afro (APFS file recovery) ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg) ![apfs.ksy-status](https://cugu.eu/file-watcher/?url=https://raw.githubusercontent.com/cugu/apfs.ksy/master/apfs.ksy&md5=9a10c4c9fee302509c0588cb8bf4053d&name=apfs.ksy)
 
 ![afro logo](logo/afro.png)
 
