@@ -12,7 +12,7 @@ afro can parse APFS volumes. It not only extracts the latest data but also older
 
 ## Usage
 
-AFRO needs a raw volume as input. The volume can be extracted from a disk image as described below.
+AFRO needs to know the start of the APFS partition. The partition can be found out as described below.
 
 ### Export partition
 
