@@ -2,7 +2,7 @@
 
 ![afro logo](logo/afro.png)
 
-afro can parse APFS volumes. It not only extracts the latest data but also older versions of the files.
+afro can parse APFS volumes. It can also recover deleted files from APFS that other tool do not find.
 
 ## Installation
 

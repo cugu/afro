@@ -47,7 +47,6 @@ class OffsetBufferedReader(io.BufferedReader):
 
 
 def extract(args):
-    print(args)
     """ open image and extract information """
 
     if args.log:
