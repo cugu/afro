@@ -1,6 +1,6 @@
-# afro (APFS file recovery) ![apfs.ksy-status](https://cugu.eu/file-watcher/?url=https://raw.githubusercontent.com/cugu/apfs.ksy/master/apfs.ksy&md5=dd07549e87b5c3bdf3dcafed29a5aff1&name=apfs.ksy)
-
 ![afro logo](logo/afro.png)
+
+# afro (APFS file recovery) ![apfs.ksy-status](https://cugu.eu/file-watcher/?url=https://raw.githubusercontent.com/cugu/apfs.ksy/master/apfs.ksy&md5=dd07549e87b5c3bdf3dcafed29a5aff1&name=apfs.ksy)
 
 afro can parse APFS volumes. It can also recover deleted files from APFS that other tool do not find.
 
