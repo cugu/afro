@@ -1,6 +1,6 @@
 ![afro logo](logo/afro.png)
 
-# afro (APFS file recovery) ![https://travis-ci.org/cugu/afro](https://api.travis-ci.org/cugu/afro.svg?branch=master)
+# afro (APFS file recovery) [![Build Status](https://travis-ci.org/cugu/afro.svg?branch=master)](https://travis-ci.org/cugu/afro)
 
 afro can parse APFS volumes. It can also recover deleted files from APFS that other tool do not find.
 
