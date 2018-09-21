@@ -68,14 +68,14 @@ def extract(args):
         block_size = apfs.block_size
         image_io.seek(0)
 
-        if args.extraction_method == 'parse':
+        if args.method == 'parse':
             file_entries = parse.parse(image_io, args.image)
-        elif args.extraction_method == 'carve':
-            if args.carving_method == 'nxsb':
+        elif args.method == 'carve':
+            if args.carver == 'nxsb':
                 file_entries = carve.nxsb(image_io, block_size, args.image)
-            elif args.carving_method == 'apsb':
+            elif args.carver == 'apsb':
                 file_entries = carve.apsb(image_io, block_size, args.image)
-            elif args.carving_method == 'nodes':
+            elif args.carver == 'nodes':
                 file_entries = carve.nodes(image_io, block_size, args.image)
             else:
                 print('Carving method unknown')
@@ -86,8 +86,8 @@ def extract(args):
 
 
         method = 'parse'
-        if args.extraction_method == 'carve':
-            method = 'carve_%s' % args.carving_method
+        if args.method == 'carve':
+            method = 'carve_%s' % args.carver
 
             # process file entries
         item_store = process.process_file_entries(
@@ -111,28 +111,10 @@ def main():
     parser = argparse.ArgumentParser(description='Recover files from an APFS image')
     parser.add_argument('-o', '--offset', type=int, default=0, help='offset to file system')
     parser.add_argument('-l', '--log', default='INFO', help='set log level')
-    parser.add_argument('-e', '--export', action='append', default=[], choices=['bodyfile', 'gtf', 'files'], help='set outputs')
+    parser.add_argument('-e', '--export', action='append', default=['bodyfile', 'gtf', 'files'], choices=['bodyfile', 'gtf', 'files'], help='set outputs')
+    parser.add_argument('-m', '--method', default="carve", choices=['parse', 'carve'], help='set extraction method')
+    parser.add_argument('-c', '--carver', default="apsb", choices=['nxsb', 'apsb', 'nodes'], help='set carving method')
 
-    # extraction methods
-    subparsers = parser.add_subparsers(
-        title='extraction methods',
-        help='Available extraction methods',
-        dest='extraction_method'
-    )
-    subparsers.required = True
-    subparsers.add_parser('parse', help='parse file system and recover files')
-    carve_parser = subparsers.add_parser('carve', help='carve file system and recover files')
-
-    # carving methods
-    carve_parsers = carve_parser.add_subparsers(
-        title='carving methods',
-        help='available carving methods',
-        dest='carving_method'
-    )
-    carve_parsers.required = True
-    carve_parsers.add_parser('nxsb', help='carve container superblocks and recover files')
-    carve_parsers.add_parser('apsb', help='carve volume superblocks and recover files')
-    carve_parsers.add_parser('nodes', help='carve nodes and recover files')
 
     parser.add_argument('image', help='path to the image')
     args = parser.parse_args()

@@ -31,18 +31,18 @@ def add_file_entries(file_entries, new_file_entries, xid_override, volume_overri
 def parse_node(node, apfs):
     # 'unknown' is the default volume name
     # node_type 1 contains only pointer records
-    if node.body.node_type == 1:
-        return {node.hdr.xid: {'unknown': []}}
-    return {node.hdr.xid: {'unknown': node.body.entries}}
+    if node.body.btn_flags == 1:
+        return {node.hdr.o_xid.val: {'unknown': []}}
+    return {node.hdr.o_xid.val: {'unknown': node.body.btn_data}}
 
 def parse_apsb(apsb, apfs):
     file_entries = dict()
 
     for omap_entry in libapfs.get_apsb_objects(apsb):
         # get root directory
-        root_node = omap_entry.val.obj_id.target
+        root_node = omap_entry.val.ov_paddr.target
         new_file_entries = parse_node(root_node, apfs)
-        file_entries = add_file_entries(file_entries, new_file_entries, apsb.hdr.xid, apsb.body.volname)
+        file_entries = add_file_entries(file_entries, new_file_entries, apsb.hdr.o_xid.val, apsb.body.apfs_volname)
 
     return file_entries
 
@@ -51,9 +51,9 @@ def parse_nxsb(nxsb, apfs):
 
     for fs_entry in libapfs.get_nxsb_objects(nxsb):
         # get volume superblock
-        apsb = fs_entry.val.obj_id.target
+        apsb = fs_entry.val.ov_paddr.target
         new_file_entries = parse_apsb(apsb, apfs)
-        file_entries = add_file_entries(file_entries, new_file_entries, nxsb.hdr.xid)
+        file_entries = add_file_entries(file_entries, new_file_entries, nxsb.hdr.o_xid.val)
 
     return file_entries
 
@@ -65,10 +65,10 @@ def parse(image_io, image_name):
 
     # get from container superblock
     nxsb = apfs.block0
-    block_size = nxsb.body.block_size
+    block_size = nxsb.body.nx_block_size
     file_entries = parse_nxsb(nxsb, apfs)
-    prev_nxsb = nxsb.body.xp_desc_base + nxsb.body.xp_desc_index + 1
-    count = nxsb.body.xp_desc_index_len
+    prev_nxsb = nxsb.body.nx_xp_desc_base + nxsb.body.nx_xp_desc_index + 1
+    count = nxsb.body.nx_xp_desc_len
 
     # get from older container superblocks
     for x in range(count - 1):
@@ -76,7 +76,7 @@ def parse(image_io, image_name):
         nxsb = apfs.Obj(KaitaiStream(BytesIO(data)), apfs, apfs)
         try:
             file_entries = {**file_entries, **parse_nxsb(nxsb, apfs)}
-            prev_nxsb = nxsb.body.xp_desc_base + nxsb.body.xp_desc_index + 1
+            prev_nxsb = nxsb.body.nx_xp_desc_base + nxsb.body.nx_xp_desc_index + 1
         except:
             break
 

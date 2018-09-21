@@ -53,7 +53,7 @@ class ItemStore:
         os.mkdir(name)
 
         for item in self.items:
-            full_path = os.path.join(name, item['volume'], str(item['xid']), item['path'][1:])
+            full_path = os.path.join(name, str(item['volume']), str(item['xid']), str(item['path'][1:]))
             if full_path:
                 os.makedirs(full_path, exist_ok=True)
             file_path = os.path.join(full_path, item['name'])

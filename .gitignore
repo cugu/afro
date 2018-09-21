@@ -6,3 +6,6 @@ afro/test/images/
 afro.egg-info/
 
 __pycache__
+.pytest_cache
+
+.dmg
