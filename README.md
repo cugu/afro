@@ -1,4 +1,4 @@
-<img src="/cugu/afro/raw/master/logo/afro.png" alt="afro logo" align="left">
+<img src="logo/afro.png" alt="afro logo" align="left">
 
 # afro (APFS file recovery) [![Build Status](https://travis-ci.org/cugu/afro.svg?branch=master)](https://travis-ci.org/cugu/afro)
 
