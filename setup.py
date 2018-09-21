@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='afro',
-      version='0.1',
+      version='0.2',
       description='APFS file recovery',
       url='http://github.com/cugu/afro',
       author='Jonas Plum',

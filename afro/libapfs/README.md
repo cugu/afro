@@ -2,11 +2,12 @@ Howto generate apfs.py:
 
 1. Install Kaitai:
 
-	brew install kaitai-struct-compiler
-	pip3 install kaitaistruct
+    brew install kaitai-struct-compiler
+    pip3 install kaitaistruct
 
 2. Create parser:
 
-	kaitai-struct-compiler apfs-extractor/libapfs/apfs.ksy -t python -d apfs-extractor/libapfs/
+    kaitai-struct-compiler -t python afro/libapfs/apfs.ksy
+    mv apfs.py afro/libapfs/
 
-python3 apfs-extractor.py -o 20480 parse ../data/image_50M_1.dmg test
+afro -o 40 parse ../data/image_50M_1.dmg test
