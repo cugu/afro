@@ -42,7 +42,7 @@ You have to search for the APFS partition in this list. In the example above 004
 
 All files of an apfs image can be extracted using the following command:
 
-    afro -o 40 -e files test/wsdf.dd
+    afro -o 40 -e files test/wsdf.dmg
 
 The exported files are saved in a folder named after the image with the suffix '.extracted'. Because APFS images can contain multiple volumes, each volume is extracted into a separate folder inside the '.extracted' folder. Each volume can contain multiple versions of the file system which are stored in separate numbered folders. Inside those folders two folders exists 'private-dir' and 'root'. Those folders are not visible to the user, but exist on every APFS file system.
 
@@ -65,7 +65,7 @@ Example:
 
 To get an overview over the files a body file can be created:
 
-    afro -o 40 -e bodyfile apfs_volume.dd
+    afro -o 40 -e bodyfile test/wsdf.dmg
 
 More information on the body file format can be found in the [sleuthkit wiki](https://wiki.sleuthkit.org/index.php?title=Body_file). The body file can be further investigated using [mactime](https://wiki.sleuthkit.org/index.php?title=Mactime) and [Timeline Explorer](https://ericzimmerman.github.io/).
 
