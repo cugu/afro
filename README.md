@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 <img src="logo/afro.png" alt="afro logo" align="left">
 
 # afro (APFS file recovery) [![Build Status](https://travis-ci.org/cugu/afro.svg?branch=master)](https://travis-ci.org/cugu/afro)
 
 afro can parse APFS volumes. It can also recover deleted files from APFS that other tools do not find.
-=======
-![afro logo](logo/afro.png)
 
-# afro (APFS file recovery) ![https://travis-ci.org/cugu/afro](https://api.travis-ci.org/cugu/afro.svg?branch=master)![apfs.ksy-status](https://cugu.eu/file-watcher/?url=https://raw.githubusercontent.com/cugu/apfs.ksy/master/apfs.ksy&md5=dd07549e87b5c3bdf3dcafed29a5aff1&name=apfs.ksy)
-
-afro can parse APFS volumes. It can also recover deleted files from APFS that other tool do not find.
->>>>>>> apple-spec
 
 ## Installation
 
