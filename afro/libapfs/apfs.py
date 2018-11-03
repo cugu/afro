@@ -920,7 +920,7 @@ class Apfs(KaitaiStruct):
                     self._raw_xf[i] = self._io.read_bytes((self.xf_data[i].x_size + ((8 - self.xf_data[i].x_size) % 8)))
                     io = KaitaiStream(BytesIO(self._raw_xf[i]))
                     self.xf[i] = self._root.XfDocumentId(io, self, self._root)
-                elif _on == self._root.InoExtType.ino_ext_type_prev_fsize:
+                elif _on == self._root.InoExtType.ino_ext_type_dstream:
                     self._raw_xf[i] = self._io.read_bytes((self.xf_data[i].x_size + ((8 - self.xf_data[i].x_size) % 8)))
                     io = KaitaiStream(BytesIO(self._raw_xf[i]))
                     self.xf[i] = self._root.XfSize(io, self, self._root)

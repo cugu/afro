@@ -59,12 +59,12 @@ def process_file_entries(file_entries, apfs, blocksize, file_io, image_name, nam
 
             for file_entry in file_entries[xid][volume]:
                 # try:
-                if file_entry.j_key_t.obj_type == apfs.JObjTypes.apfs_type_extent and \
+                if file_entry.j_key_t.obj_type == apfs.JObjTypes.apfs_type_file_extent and \
                         isinstance(file_entry.val, libapfs.apfs.Apfs.JExtentValT):
 
                     extentmap[xid][volume].setdefault(file_entry.j_key_t.obj_id, list())
                     extentmap[xid][volume][file_entry.j_key_t.obj_id].append({
-                        'start': file_entry.val.phys_block_num.val,
+                        'start': file_entry.val.phys_block_num,
                         'length': file_entry.val.len,
                         'offset': file_entry.key.offset
                     })
@@ -76,7 +76,7 @@ def process_file_entries(file_entries, apfs, blocksize, file_io, image_name, nam
                     for index, xf_h in enumerate(file_entry.val.xfields.xf_data):
                         if xf_h.x_type == apfs.InoExtType.ino_ext_type_name:
                             item.name = file_entry.val.xfields.xf[index].name
-                        elif xf_h.x_type == apfs.InoExtType.ino_ext_type_prev_fsize:
+                        elif xf_h.x_type == apfs.InoExtType.ino_ext_type_dstream:
                             item.file_size = file_entry.val.xfields.xf[index].size
                     if item.name is None:
                         raise Exception("name not found")
