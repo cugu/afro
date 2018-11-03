@@ -1,4 +1,5 @@
 .DS_Store
+.vscode
 
 build/
 dist/
@@ -8,4 +9,4 @@ afro.egg-info/
 __pycache__
 .pytest_cache
 
-.dmg
+*.dmg

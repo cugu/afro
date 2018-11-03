@@ -454,7 +454,7 @@ types:
           switch-on: xf_data[_index].x_type
           cases:
             ino_ext_type::ino_ext_type_name: xf_name
-            ino_ext_type::ino_ext_type_prev_fsize: xf_size
+            ino_ext_type::ino_ext_type_dstream: xf_size
             ino_ext_type::ino_ext_type_rdev: xf_device_node
             ino_ext_type::ino_ext_type_document_id: xf_document_id
             ino_ext_type::ino_ext_type_sparse_bytes: xf_sparse_size
