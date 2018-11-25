@@ -1,7 +1,5 @@
 import logging.config
 
-import colorlog
-
 
 def set_logging(level='DEBUG'):
     logging.config.dictConfig({

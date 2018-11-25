@@ -1,5 +1,6 @@
 """ low level api methods to apfs """
 
+
 def get_nxsb_objects(nxsb):
     """ get entries of the container superblock """
 
@@ -12,6 +13,7 @@ def get_nxsb_objects(nxsb):
 
     # iterate omap
     return object_map_root.body.btn_data
+
 
 def get_apsb_objects(apsb):
     """ get entries of the volume superblock """

@@ -8,6 +8,7 @@ from . import block
 
 LOGGER = logging.getLogger(__name__)
 
+
 class ItemStore:
     def __init__(self):
         self.items = []
@@ -17,7 +18,23 @@ class ItemStore:
         self.items = []
         self.seen = set()
 
-    def add_item(self, item_type, xid, parent_id, item_id, status, volume, path, name, accesstime, modificationtime, creationtime, size, md5, extents=[]):
+    def add_item(self,
+                 item_type,
+                 xid,
+                 parent_id,
+                 item_id,
+                 status,
+                 volume,
+                 path,
+                 name,
+                 atime,
+                 mtime,
+                 ctime,
+                 size,
+                 md5,
+                 extents=None):
+        if extents is None:
+            extents = []
         if status == "exists" and (name is None or name == ""):
             print("name not found (%d, %d, %d)" % (xid, parent_id, item_id))
         new_item = {
@@ -25,9 +42,9 @@ class ItemStore:
             'xid': xid,
             'parent_id': parent_id,
             'name': name,
-            'atime': accesstime,
-            'mtime': modificationtime,
-            'crtime': creationtime,
+            'atime': atime,
+            'mtime': mtime,
+            'crtime': ctime,
             'size': size,
             'md5': md5,
             'type': item_type,
@@ -39,7 +56,7 @@ class ItemStore:
         if tuple(new_item) not in self.seen:
             self.items.append(new_item)
             hitem = copy.deepcopy(new_item)
-            del hitem['extents'] # TODO list is not hashable
+            del hitem['extents']  # TODO list is not hashable
             self.seen.add(tuple(hitem.items()))
 
     def save_files(self, name, blocksize, image_file_io):
@@ -63,15 +80,14 @@ class ItemStore:
                 with open(file_path, 'bw+') as file_io:
                     remaining = (item['size'] or 0)
                     for extent in item['extents']:
-                        for b in range(int(extent['length'] / blocksize)):
-                            data = block.get_block(extent['start'] + b, blocksize, image_file_io)
+                        for block_part in range(int(extent['length'] / blocksize)):
+                            data = block.get_block(extent['start'] + block_part, blocksize, image_file_io)
                             if remaining < blocksize:
                                 chunk_size = remaining
                             else:
                                 chunk_size = blocksize
                             remaining -= chunk_size
                             file_io.write(data[:chunk_size])
-
 
     def save_bodyfile(self, name):
         # add suffix if file exists
@@ -83,15 +99,24 @@ class ItemStore:
 
         with open(name, 'w+') as csvfile:
             fieldnames = [
-                'md5', 'name', 'id', 'mode', 'uid', 'gid',
-                'size', 'atime', 'mtime', 'ctime', 'crtime',
+                'md5',
+                'name',
+                'id',
+                'mode',
+                'uid',
+                'gid',
+                'size',
+                'atime',
+                'mtime',
+                'ctime',
+                'crtime',
             ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter='|', extrasaction='ignore')
             writer.writeheader()
             for item in self.items:
                 item = copy.deepcopy(item)
                 xid = item['xid'] if item['xid'] is not None else 0
-                item['id'] = "%s-%s-%s" % (0, xid, item['id']) # TODO: add volume number
+                item['id'] = "%s-%s-%s" % (0, xid, item['id'])  # TODO: add volume number
                 item['name'] = posixpath.join(item['path'], item['name'])
                 item['mode'] = 'f' if item['type'] == 'file' else 'd'
                 item['uid'] = 0
@@ -108,8 +133,8 @@ class ItemStore:
 
         with open(name, 'w+') as csvfile:
             fieldnames = [
-                'type', 'xid', 'parent_id', 'id', 'status', 'volume',
-                'path', 'name', 'atime', 'mtime', 'crtime', 'size', 'md5'
+                'type', 'xid', 'parent_id', 'id', 'status', 'volume', 'path', 'name', 'atime', 'mtime', 'crtime',
+                'size', 'md5'
             ]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames, extrasaction='ignore')
             writer.writeheader()

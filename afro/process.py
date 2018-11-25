@@ -6,7 +6,6 @@ import posixpath
 from . import libapfs
 from . import item_store, block
 
-
 LOGGER = logging.getLogger(__name__)
 
 
@@ -17,9 +16,10 @@ def get_path(itemmap, fid):
         return parent_path + '/' + name
     return '?'
 
+
 def process_extent(extent, remaining, blocksize, file_io, md5):
-    for b in range(int(extent['length'] / blocksize)):
-        data = block.get_block(extent['start'] + b, blocksize, file_io)
+    for block_part in range(int(extent['length'] / blocksize)):
+        data = block.get_block(extent['start'] + block_part, blocksize, file_io)
         if remaining < blocksize:
             chunk_size = remaining
         else:
@@ -27,6 +27,7 @@ def process_extent(extent, remaining, blocksize, file_io, md5):
         remaining -= chunk_size
         md5.update(data[:chunk_size])
     return {'md5': md5, 'remaining': remaining}
+
 
 class Item:
 
@@ -41,7 +42,8 @@ class Item:
         self.file_size = None
         self.type = None
 
-def process_file_entries(file_entries, apfs, blocksize, file_io, image_name, name):
+
+def process_file_entries(file_entries, apfs, blocksize, file_io):
     """ Print file entries as table """
 
     extentmap = dict()
@@ -94,7 +96,8 @@ def process_file_entries(file_entries, apfs, blocksize, file_io, image_name, nam
                     itemmap[xid][volume][file_entry.j_key_t.obj_id] = item
 
                 # except Exception as ex:
-                #     LOGGER.error("File entry %s %s parsing failed %s", file_entry.j_key_t.obj_id, file_entry.j_key_t.obj_type, ex)
+                #     LOGGER.error("File entry %s %s parsing failed %s",
+                # file_entry.j_key_t.obj_id, file_entry.j_key_t.obj_type, ex)
 
     store = item_store.ItemStore()
     for xid in file_entries:
@@ -113,25 +116,17 @@ def process_file_entries(file_entries, apfs, blocksize, file_io, image_name, nam
                     remaining = (item.file_size or 0)
 
                     extents = sorted(
-                        extentmap[xid][volume].get(item.private_id, []),
-                        key=lambda extent: extent['offset']
-                    )
+                        extentmap[xid][volume].get(item.private_id, []), key=lambda extent: extent['offset'])
 
                     for extent in extents:
                         intermediate = process_extent(extent, remaining, blocksize, file_io, md5)
                         md5 = intermediate['md5']
                         remaining = intermediate['remaining']
 
-                store.add_item(
-                    item.type,
-                    xid, item.parent, item.node_id,
-                    'exists',
-                    volume, posixpath.dirname(path), item.name,
-                    (item.accesstime or 0) / 1000000000,
-                    (item.modificationtime or 0) / 1000000000,
-                    (item.creationtime or 0) / 1000000000,
-                    (item.file_size or 0), md5.hexdigest() if extents else '0',
-                    extents
-                )
+                store.add_item(item.type, xid, item.parent, item.node_id, 'exists', volume, posixpath.dirname(path),
+                               item.name, (item.accesstime or 0) / 1000000000,
+                               (item.modificationtime or 0) / 1000000000, (item.creationtime or 0) / 1000000000,
+                               (item.file_size or 0),
+                               md5.hexdigest() if extents else '0', extents)
 
     return store

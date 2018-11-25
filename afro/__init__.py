@@ -13,10 +13,11 @@ Options:
 import io
 import argparse
 import logging
+import sys
 
 from kaitaistruct import KaitaiStream, BytesIO
 
-from . import item_store, log, parse, carve, process
+from . import item_store, log, parse, carve, process, libapfs
 
 LOGO = """      `-+yhddhy+-`
     .sNMMMMMMMMMMms.
@@ -30,6 +31,7 @@ LOGO = """      `-+yhddhy+-`
      .odds/::/shdh-
         `.::::.`.sh/
                   .so"""
+
 
 class OffsetBufferedReader(io.BufferedReader):
     """docstring for OffsetBytesIO"""
@@ -58,7 +60,7 @@ def extract(args):
 
     export = args.export
     if not export:
-        export = ['bodyfile']
+        export = ['bodyfile', 'gtf', 'files']
 
     with open(args.image, 'rb') as image_io:
         image_io = OffsetBufferedReader(image_io, args.offset * 512)
@@ -69,14 +71,14 @@ def extract(args):
         image_io.seek(0)
 
         if args.method == 'parse':
-            file_entries = parse.parse(image_io, args.image)
+            file_entries = parse.parse(image_io)
         elif args.method == 'carve':
             if args.carver == 'nxsb':
-                file_entries = carve.nxsb(image_io, block_size, args.image)
+                file_entries = carve.nxsb(image_io, block_size)
             elif args.carver == 'apsb':
-                file_entries = carve.apsb(image_io, block_size, args.image)
+                file_entries = carve.apsb(image_io, block_size)
             elif args.carver == 'nodes':
-                file_entries = carve.nodes(image_io, block_size, args.image)
+                file_entries = carve.nodes(image_io, block_size)
             else:
                 print('Carving method unknown')
                 sys.exit(1)
@@ -84,37 +86,29 @@ def extract(args):
             print('Extraction method unknown')
             sys.exit(2)
 
-
         method = 'parse'
         if args.method == 'carve':
             method = 'carve_%s' % args.carver
 
             # process file entries
-        item_store = process.process_file_entries(
-            file_entries,
-            apfs,
-            block_size,
-            image_io,
-            args.image,
-            method
-        )
+        store = process.process_file_entries(file_entries, apfs, block_size, image_io)
 
         if 'bodyfile' in export:
-            item_store.save_bodyfile("%s.%s.bodyfile" % (args.image, method))
+            store.save_bodyfile("%s.%s.bodyfile" % (args.image, method))
         if 'gtf' in export:
-            item_store.save_gtf("%s.%s.gtf" % (args.image, method))
+            store.save_gtf("%s.%s.gtf" % (args.image, method))
         if 'files' in export:
-            item_store.save_files("%s.%s.extracted" % (args.image, method), block_size, image_io)
+            store.save_files("%s.%s.extracted" % (args.image, method), block_size, image_io)
+
 
 def main():
     """ Parse arguments and execure correct extraction method """
     parser = argparse.ArgumentParser(description='Recover files from an APFS image')
     parser.add_argument('-o', '--offset', type=int, default=0, help='offset to file system')
     parser.add_argument('-l', '--log', default='INFO', help='set log level')
-    parser.add_argument('-e', '--export', action='append', default=['bodyfile', 'gtf', 'files'], choices=['bodyfile', 'gtf', 'files'], help='set outputs')
+    parser.add_argument('-e', '--export', action='append', choices=['bodyfile', 'gtf', 'files'], help='set outputs')
     parser.add_argument('-m', '--method', default="carve", choices=['parse', 'carve'], help='set extraction method')
     parser.add_argument('-c', '--carver', default="apsb", choices=['nxsb', 'apsb', 'nodes'], help='set carving method')
-
 
     parser.add_argument('image', help='path to the image')
     args = parser.parse_args()
