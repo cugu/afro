@@ -1,4 +1,4 @@
-Howto generate apfs.py:
+# Generate apfs.py
 
 1. Install Kaitai:
 

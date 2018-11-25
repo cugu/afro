@@ -4,7 +4,6 @@
 
 afro can parse APFS volumes. It can also recover deleted files from APFS that other tools do not find.
 
-
 ## Installation
 
     git clone https://github.com/cugu/afro
@@ -23,7 +22,7 @@ AFRO needs to know the start of the APFS container, you can find the start of th
 
 This results in:
 
-```
+``` text
 GUID Partition Table (EFI)
 Offset Sector: 0
 Units are in 512-byte sectors
@@ -70,20 +69,19 @@ To get an overview over the files a body file can be created:
 
 More information on the body file format can be found in the [sleuthkit wiki](https://wiki.sleuthkit.org/index.php?title=Body_file). The body file can be further investigated using [mactime](https://wiki.sleuthkit.org/index.php?title=Mactime) and [Timeline Explorer](https://ericzimmerman.github.io/).
 
-
 ## Documentation on APFS
 
- - [**Apple File System Reference**](https://developer.apple.com/support/apple-file-system/Apple-File-System-Reference.pdf): Official, but incomplete APFS specification
- - [**Decoding the APFS file system**](http://www.sciencedirect.com/science/article/pii/S1742287617301408): Paper by Kurt H.Hansen and Fergus Toolan Fergus in _Digital Investigation_. Published: 2017-09-22.
- - [**Apple File System Guide**](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html): Official documentation on APFS. Lacks lots of information on APFS. Last update: 2017-09-21.
- - [**APFS filesystem format**](https://blog.cugu.eu/post/apfs/): Deprecated blog post by myself. Still contains some useful diagrams. Last update: 2017-04-30.
- - Information about the checksum calculation can be found in [checksum.md](docs/checksum.md).
-
+- [**Apple File System Reference**](https://developer.apple.com/support/apple-file-system/Apple-File-System-Reference.pdf): Official, but incomplete APFS specification
+- [**Decoding the APFS file system**](http://www.sciencedirect.com/science/article/pii/S1742287617301408): Paper by Kurt H.Hansen and Fergus Toolan Fergus in _Digital Investigation_. Published: 2017-09-22.
+- [**Apple File System Guide**](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html): Official documentation on APFS. Lacks lots of information on APFS. Last update: 2017-09-21.
+- [**APFS filesystem format**](https://blog.cugu.eu/post/apfs/): Deprecated blog post by myself. Still contains some useful diagrams. Last update: 2017-04-30.
+- Information about the checksum calculation can be found in [checksum.md](docs/checksum.md).
 
 ## Contributing
+
 Pull requests and issues are welcome!
 
 ## Licenses
+
 The afro software is licensed as [GPLv3](licences/gpl-3.0.txt).
 The ksy file (libapfs/apfs.ksy) is licensed under [MIT license](licences/mit.txt).
-
