@@ -10,9 +10,9 @@ def create_checksum(data):
     for i in range(int(len(data) / 4)):
         dtype = np.dtype(np.uint32)
         dtype = dtype.newbyteorder('L')
-        data = np.frombuffer(data[i * 4:(i + 1) * 4], dtype=dtype)
+        value = np.frombuffer(data[i * 4:(i + 1) * 4], dtype=dtype)
 
-        sum1 = (sum1 + np.uint64(data)) % mod_value
+        sum1 = (sum1 + np.uint64(value)) % mod_value
         sum2 = (sum2 + sum1) % mod_value
 
     check1 = mod_value - ((sum1 + sum2) % mod_value)
