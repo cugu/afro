@@ -89,7 +89,7 @@ types:
         enum: object_type
       - id: o_flags
         type: u2
-        # enum: object_type_flags
+        enum: object_type_flags
       - id: o_subtype
         type: u4
         enum: object_type
@@ -802,34 +802,34 @@ types:
 enums:
 
   object_type:
-    0x00000001: object_type_nx_superblock
-    0x00000002: object_type_btree
-    0x00000003: object_type_btree_node
-    0x00000005: object_type_spaceman
-    0x00000006: object_type_spaceman_cab
-    0x00000007: object_type_spaceman_cib
-    0x00000008: object_type_spaceman_bitmap
-    0x00000009: object_type_spaceman_free_queue
-    0x0000000a: object_type_extent_list_tree
-    0x0000000b: object_type_omap
-    0x0000000c: object_type_checkpoint_map
-    0x0000000d: object_type_fs
-    0x0000000e: object_type_fstree
-    0x0000000f: object_type_blockreftree
-    0x00000010: object_type_snapmetatree
-    0x00000011: object_type_nx_reaper
-    0x00000012: object_type_nx_reap_list
-    0x00000013: object_type_omap_snapshot
-    0x00000014: object_type_efi_jumpstart
-    0x00000015: object_type_fusion_middle_tree
-    0x00000016: object_type_nx_fusion_wbc
-    0x00000017: object_type_nx_fusion_wbc_list
-    0x00000018: object_type_er_state
-    0x00000019: object_type_gbitmap
-    0x0000001a: object_type_gbitmap_tree
-    0x0000001b: object_type_gbitmap_block
-    0x00000000: object_type_invalid
-    0x000000ff: object_type_test
+    0x0001: object_type_nx_superblock
+    0x0002: object_type_btree
+    0x0003: object_type_btree_node
+    0x0005: object_type_spaceman
+    0x0006: object_type_spaceman_cab
+    0x0007: object_type_spaceman_cib
+    0x0008: object_type_spaceman_bitmap
+    0x0009: object_type_spaceman_free_queue
+    0x000a: object_type_extent_list_tree
+    0x000b: object_type_omap
+    0x000c: object_type_checkpoint_map
+    0x000d: object_type_fs
+    0x000e: object_type_fstree
+    0x000f: object_type_blockreftree
+    0x0010: object_type_snapmetatree
+    0x0011: object_type_nx_reaper
+    0x0012: object_type_nx_reap_list
+    0x0013: object_type_omap_snapshot
+    0x0014: object_type_efi_jumpstart
+    0x0015: object_type_fusion_middle_tree
+    0x0016: object_type_nx_fusion_wbc
+    0x0017: object_type_nx_fusion_wbc_list
+    0x0018: object_type_er_state
+    0x0019: object_type_gbitmap
+    0x001a: object_type_gbitmap_tree
+    0x001b: object_type_gbitmap_block
+    0x0000: object_type_invalid
+    0x00ff: object_type_test
 
   object_type_flags:
     0x00000000: obj_virtual

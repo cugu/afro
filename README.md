@@ -71,7 +71,8 @@ More information on the body file format can be found in the [sleuthkit wiki](ht
 
 ## Documentation on APFS
 
-- [**Apple File System Reference**](https://developer.apple.com/support/apple-file-system/Apple-File-System-Reference.pdf): Official, but incomplete APFS specification
+- [**Forensic APFS File Recovery**](https://dl.acm.org/doi/10.1145/3230833.3232808): Paper where AFRO is presented.
+- [**Apple File System Reference**](https://developer.apple.com/support/apple-file-system/Apple-File-System-Reference.pdf): Official, but incomplete APFS specification.
 - [**Decoding the APFS file system**](http://www.sciencedirect.com/science/article/pii/S1742287617301408): Paper by Kurt H.Hansen and Fergus Toolan Fergus in _Digital Investigation_. Published: 2017-09-22.
 - [**Apple File System Guide**](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html): Official documentation on APFS. Lacks lots of information on APFS. Last update: 2017-09-21.
 - [**APFS filesystem format**](https://blog.cugu.eu/post/apfs/): Deprecated blog post by myself. Still contains some useful diagrams. Last update: 2017-04-30.
