@@ -4,9 +4,9 @@ from pkg_resources import parse_version
 from kaitaistruct import __version__ as ks_version, KaitaiStruct, KaitaiStream, BytesIO
 from enum import Enum
 
+
 if parse_version(ks_version) < parse_version('0.7'):
     raise Exception("Incompatible Kaitai Struct Python API: 0.7 or later is required, but you have %s" % (ks_version))
-
 
 class Apfs(KaitaiStruct):
     """https://developer.apple.com/support/apple-file-system/apple-file-system-reference.pdf."""
@@ -99,12 +99,11 @@ class Apfs(KaitaiStruct):
 
     class ObjectTypeFlags(Enum):
         obj_virtual = 0
-        obj_nonpersistent = 134217728
-        obj_encrypted = 268435456
-        obj_noheader = 536870912
-        obj_physical = 1073741824
-        obj_ephemeral = 2147483648
-
+        obj_nonpersistent = 2048
+        obj_encrypted = 4096
+        obj_noheader = 8192
+        obj_physical = 16384
+        obj_ephemeral = 32768
     def __init__(self, _io, _parent=None, _root=None):
         self._io = _io
         self._parent = _parent
@@ -117,7 +116,6 @@ class Apfs(KaitaiStruct):
         self.block0 = self._root.Obj(io, self, self._root)
 
     class JSiblingValT(KaitaiStruct):
-
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -129,8 +127,8 @@ class Apfs(KaitaiStruct):
             self.name_len = self._io.read_u2le()
             self.name = (self._io.read_bytes(self.name_len)).decode(u"utf-8")
 
-    class JInodeValT(KaitaiStruct):
 
+    class JInodeValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -156,8 +154,8 @@ class Apfs(KaitaiStruct):
             self.pad2 = self._io.read_u8le()
             self.xfields = self._root.XfBlobT(self._io, self, self._root)
 
-    class JKeyT(KaitaiStruct):
 
+    class JKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -184,8 +182,8 @@ class Apfs(KaitaiStruct):
             self._m_obj_type = self._root.JObjTypes((self.obj_id_and_type_high >> 28))
             return self._m_obj_type if hasattr(self, '_m_obj_type') else None
 
-    class XfDeviceNode(KaitaiStruct):
 
+    class XfDeviceNode(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -211,8 +209,8 @@ class Apfs(KaitaiStruct):
             self._m_minor = (self.major_minor & 16777215)
             return self._m_minor if hasattr(self, '_m_minor') else None
 
-    class PointerValT(KaitaiStruct):
 
+    class PointerValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -222,8 +220,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.pointer = self._io.read_u8le()
 
-    class JXattrKeyT(KaitaiStruct):
 
+    class JXattrKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -234,8 +232,8 @@ class Apfs(KaitaiStruct):
             self.name_len = self._io.read_u1()
             self.name = (KaitaiStream.bytes_terminate(self._io.read_bytes(self.name_len), 0, False)).decode(u"utf-8")
 
-    class CheckpointMappingT(KaitaiStruct):
 
+    class CheckpointMappingT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -252,8 +250,8 @@ class Apfs(KaitaiStruct):
             self.cpm_oid = self._io.read_u8le()
             self.cpm_paddr = self._root.OidT(self._io, self, self._root)
 
-    class NodeEntry(KaitaiStruct):
 
+    class NodeEntry(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -268,6 +266,7 @@ class Apfs(KaitaiStruct):
             self.data_offset = self._io.read_s2le()
             if (self._parent.btn_flags & 4) == 0:
                 self.data_length = self._io.read_u2le()
+
 
         @property
         def j_key_t(self):
@@ -340,8 +339,8 @@ class Apfs(KaitaiStruct):
             self._io.seek(_pos)
             return self._m_val if hasattr(self, '_m_val') else None
 
-    class OmapValT(KaitaiStruct):
 
+    class OmapValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -353,8 +352,8 @@ class Apfs(KaitaiStruct):
             self.ov_size = self._io.read_u4le()
             self.ov_paddr = self._root.PaddrT(self._io, self, self._root)
 
-    class XfSize(KaitaiStruct):
 
+    class XfSize(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -368,8 +367,8 @@ class Apfs(KaitaiStruct):
             self.unknown_size = self._io.read_u8le()
             self.unknown_32 = self._io.read_u8le()
 
-    class CheckpointMapPhysT(KaitaiStruct):
 
+    class CheckpointMapPhysT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -383,8 +382,9 @@ class Apfs(KaitaiStruct):
             for i in range(self.cpm_count):
                 self.cpm_map[i] = self._root.CheckpointMappingT(self._io, self, self._root)
 
-    class HistoryValT(KaitaiStruct):
 
+
+    class HistoryValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -395,8 +395,8 @@ class Apfs(KaitaiStruct):
             self.unknown_0 = self._io.read_u4le()
             self.unknown_4 = self._io.read_u4le()
 
-    class ChunkInfoBlock(KaitaiStruct):
 
+    class ChunkInfoBlock(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -410,8 +410,9 @@ class Apfs(KaitaiStruct):
             for i in range(self.cib_chunk_info_count):
                 self.cib_chunk_info[i] = self._root.ChunkInfoT(self._io, self, self._root)
 
-    class Nloc(KaitaiStruct):
 
+
+    class Nloc(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -422,8 +423,8 @@ class Apfs(KaitaiStruct):
             self.false = self._io.read_u2le()
             self.len = self._io.read_u2le()
 
-    class ApfsModifiedByT(KaitaiStruct):
 
+    class ApfsModifiedByT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -435,8 +436,8 @@ class Apfs(KaitaiStruct):
             self.timestamp = self._io.read_u8le()
             self.last_xid = self._root.XidT(self._io, self, self._root)
 
-    class XfName(KaitaiStruct):
 
+    class XfName(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -446,8 +447,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.name = (self._io.read_bytes_term(0, False, True, True)).decode(u"utf-8")
 
-    class JDrecKeyT(KaitaiStruct):
 
+    class JDrecKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -459,8 +460,8 @@ class Apfs(KaitaiStruct):
             self.hash = self._io.read_bytes(3)
             self.name = (KaitaiStream.bytes_terminate(self._io.read_bytes(self.name_len), 0, False)).decode(u"utf-8")
 
-    class BtreeNodePhysT(KaitaiStruct):
 
+    class BtreeNodePhysT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -479,8 +480,9 @@ class Apfs(KaitaiStruct):
             for i in range(self.btn_nkeys):
                 self.btn_data[i] = self._root.NodeEntry(self._io, self, self._root)
 
-    class JExtentRefcountValT(KaitaiStruct):
 
+
+    class JExtentRefcountValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -490,8 +492,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.count = self._io.read_u4le()
 
-    class HistoryKeyT(KaitaiStruct):
 
+    class HistoryKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -502,8 +504,8 @@ class Apfs(KaitaiStruct):
             self.xid = self._io.read_u8le()
             self.obj_id = self._root.OidT(self._io, self, self._root)
 
-    class JDrecValT(KaitaiStruct):
 
+    class JDrecValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -515,8 +517,8 @@ class Apfs(KaitaiStruct):
             self.date_added = self._io.read_u8le()
             self.flags = self._root.XfBlobT(self._io, self, self._root)
 
-    class Obj(KaitaiStruct):
 
+    class Obj(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -543,8 +545,8 @@ class Apfs(KaitaiStruct):
             elif _on == self._root.ObjectType.object_type_omap:
                 self.body = self._root.OmapPhysT(self._io, self, self._root)
 
-    class JPhysExtValT(KaitaiStruct):
 
+    class JPhysExtValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -558,8 +560,8 @@ class Apfs(KaitaiStruct):
             self.inode = self._io.read_u8le()
             self.unknown_16 = self._io.read_u4le()
 
-    class ObjPhys(KaitaiStruct):
 
+    class ObjPhys(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -571,11 +573,11 @@ class Apfs(KaitaiStruct):
             self.o_oid = self._root.OidT(self._io, self, self._root)
             self.o_xid = self._root.XidT(self._io, self, self._root)
             self.o_type = self._root.ObjectType(self._io.read_u2le())
-            self.o_flags = self._io.read_u2le()
+            self.o_flags = self._root.ObjectTypeFlags(self._io.read_u2le())
             self.o_subtype = self._root.ObjectType(self._io.read_u4le())
 
-    class ChunkInfoT(KaitaiStruct):
 
+    class ChunkInfoT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -589,8 +591,8 @@ class Apfs(KaitaiStruct):
             self.ci_free_count = self._io.read_u4le()
             self.ci_bitmap_addr = self._io.read_u8le()
 
-    class SpaceManager(KaitaiStruct):
 
+    class SpaceManager(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -616,8 +618,7 @@ class Apfs(KaitaiStruct):
         @property
         def spaceman_internal_pool_blocks(self):
             if hasattr(self, '_m_spaceman_internal_pool_blocks'):
-                return self._m_spaceman_internal_pool_blocks if hasattr(self,
-                                                                        '_m_spaceman_internal_pool_blocks') else None
+                return self._m_spaceman_internal_pool_blocks if hasattr(self, '_m_spaceman_internal_pool_blocks') else None
 
             _pos = self._io.pos()
             self._io.seek(self.entries_offset)
@@ -628,8 +629,8 @@ class Apfs(KaitaiStruct):
             self._io.seek(_pos)
             return self._m_spaceman_internal_pool_blocks if hasattr(self, '_m_spaceman_internal_pool_blocks') else None
 
-    class XFieldT(KaitaiStruct):
 
+    class XFieldT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -641,8 +642,8 @@ class Apfs(KaitaiStruct):
             self.x_flags = self._io.read_u1()
             self.x_size = self._io.read_u2le()
 
-    class ApfsSuperblockT(KaitaiStruct):
 
+    class ApfsSuperblockT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -689,12 +690,12 @@ class Apfs(KaitaiStruct):
             self.apfs_root_to_xid = self._root.XidT(self._io, self, self._root)
             self.apfs_er_state_oid = self._root.OidT(self._io, self, self._root)
 
+
     class PaddrT(KaitaiStruct):
         """universal type to address a block: it both parses one u8-sized
         block address and provides a lazy instance to parse that block
         right away.
         """
-
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -718,8 +719,8 @@ class Apfs(KaitaiStruct):
             io.seek(_pos)
             return self._m_target if hasattr(self, '_m_target') else None
 
-    class OmapPhysT(KaitaiStruct):
 
+    class OmapPhysT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -737,8 +738,8 @@ class Apfs(KaitaiStruct):
             self.om_pending_revert_min = self._root.XidT(self._io, self, self._root)
             self.om_pending_revert_max = self._root.XidT(self._io, self, self._root)
 
-    class JSiblingMapValT(KaitaiStruct):
 
+    class JSiblingMapValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -748,8 +749,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.file_id = self._io.read_u8le()
 
-    class JSiblingKeyT(KaitaiStruct):
 
+    class JSiblingKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -759,8 +760,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.sibling_id = self._io.read_u8le()
 
-    class XfDocumentId(KaitaiStruct):
 
+    class XfDocumentId(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -770,8 +771,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.id = self._io.read_u4le()
 
-    class JExtentValT(KaitaiStruct):
 
+    class JExtentValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -783,8 +784,8 @@ class Apfs(KaitaiStruct):
             self.phys_block_num = self._io.read_u8le()
             self.flags = self._io.read_u8le()
 
-    class NxSuperblockT(KaitaiStruct):
 
+    class NxSuperblockT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -861,8 +862,8 @@ class Apfs(KaitaiStruct):
             self._io.seek(_pos)
             return self._m_spaceman_offset if hasattr(self, '_m_spaceman_offset') else None
 
-    class XfSparseSize(KaitaiStruct):
 
+    class XfSparseSize(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -872,8 +873,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.size = self._io.read_u8le()
 
-    class OmapKeyT(KaitaiStruct):
 
+    class OmapKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -884,8 +885,8 @@ class Apfs(KaitaiStruct):
             self.ok_oid = self._root.OidT(self._io, self, self._root)
             self.ok_xid = self._root.XidT(self._io, self, self._root)
 
-    class XfBlobT(KaitaiStruct):
 
+    class XfBlobT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -926,9 +927,10 @@ class Apfs(KaitaiStruct):
                 else:
                     self.xf[i] = self._io.read_bytes((self.xf_data[i].x_size + ((8 - self.xf_data[i].x_size) % 8)))
 
+
+
     class OidT(KaitaiStruct):
         """similar to paddr_t."""
-
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -952,8 +954,8 @@ class Apfs(KaitaiStruct):
             io.seek(_pos)
             return self._m_target if hasattr(self, '_m_target') else None
 
-    class PrangeT(KaitaiStruct):
 
+    class PrangeT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -964,8 +966,8 @@ class Apfs(KaitaiStruct):
             self.pr_start_paddr = self._io.read_u8le()
             self.pr_block_count = self._io.read_u8le()
 
-    class JExtentKeyT(KaitaiStruct):
 
+    class JExtentKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -975,8 +977,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.offset = self._io.read_u8le()
 
-    class JXattrValT(KaitaiStruct):
 
+    class JXattrValT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -988,13 +990,12 @@ class Apfs(KaitaiStruct):
             self.xdata_length = self._io.read_u2le()
             _on = self.flags
             if _on == self._root.JXattrFlags.symlink:
-                self.xdata = (KaitaiStream.bytes_terminate(self._io.read_bytes(self.xdata_length), 0,
-                                                           False)).decode(u"utf-8")
+                self.xdata = (KaitaiStream.bytes_terminate(self._io.read_bytes(self.xdata_length), 0, False)).decode(u"utf-8")
             else:
                 self.xdata = self._io.read_bytes(self.xdata_length)
 
-    class XidT(KaitaiStruct):
 
+    class XidT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -1004,8 +1005,8 @@ class Apfs(KaitaiStruct):
         def _read(self):
             self.val = self._io.read_u8le()
 
-    class JEmptyKeyT(KaitaiStruct):
 
+    class JEmptyKeyT(KaitaiStruct):
         def __init__(self, _io, _parent=None, _root=None):
             self._io = _io
             self._parent = _parent
@@ -1015,6 +1016,7 @@ class Apfs(KaitaiStruct):
         def _read(self):
             pass
 
+
     @property
     def block_size(self):
         if hasattr(self, '_m_block_size'):
@@ -1022,3 +1024,5 @@ class Apfs(KaitaiStruct):
 
         self._m_block_size = self._root.block0.body.nx_block_size
         return self._m_block_size if hasattr(self, '_m_block_size') else None
+
+

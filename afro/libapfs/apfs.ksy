@@ -832,12 +832,12 @@ enums:
     0x00ff: object_type_test
 
   object_type_flags:
-    0x00000000: obj_virtual
-    0x80000000: obj_ephemeral
-    0x40000000: obj_physical
-    0x20000000: obj_noheader
-    0x10000000: obj_encrypted
-    0x08000000: obj_nonpersistent
+    0x0000: obj_virtual
+    0x8000: obj_ephemeral
+    0x4000: obj_physical
+    0x2000: obj_noheader
+    0x1000: obj_encrypted
+    0x0800: obj_nonpersistent
 
   checkpoint_map_flags:
     0x00000001: checkpoint_map_last
