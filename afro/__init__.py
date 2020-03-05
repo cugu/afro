@@ -14,6 +14,7 @@ import io
 import argparse
 import logging
 import sys
+import os.path
 
 from kaitaistruct import KaitaiStream, BytesIO
 
@@ -93,12 +94,13 @@ def extract(args):
             # process file entries
         store = process.process_file_entries(file_entries, apfs, block_size, image_io)
 
+        base = os.path.basename(args.image)
         if 'bodyfile' in export:
-            store.save_bodyfile("%s.%s.bodyfile" % (args.image, method))
+            store.save_bodyfile("%s.%s.bodyfile" % (base, method))
         if 'gtf' in export:
-            store.save_gtf("%s.%s.gtf" % (args.image, method))
+            store.save_gtf("%s.%s.gtf" % (base, method))
         if 'files' in export:
-            store.save_files("%s.%s.extracted" % (args.image, method), block_size, image_io)
+            store.save_files("%s.%s.extracted" % (base, method), block_size, image_io)
 
 
 def main():
