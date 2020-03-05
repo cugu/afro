@@ -17,7 +17,7 @@ def test_parse():
             carver='apsb', export=['bodyfile', 'files'], image='test/wsdf.dmg', log='INFO', method='parse', offset=40))
 
     # should extract 290 items
-    assert line_count('test/wsdf.dmg.parse.bodyfile') == 26
+    assert line_count('wsdf.dmg.parse.bodyfile') == 26
 
 
 def test_carve():
@@ -26,4 +26,4 @@ def test_carve():
             carver='apsb', export=['bodyfile', 'files'], image='test/wsdf.dmg', log='INFO', method='carve', offset=40))
 
     # should extract 290 items
-    assert line_count('test/wsdf.dmg.carve_apsb.bodyfile') == 290
+    assert line_count('wsdf.dmg.carve_apsb.bodyfile') == 290
