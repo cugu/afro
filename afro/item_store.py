@@ -67,27 +67,30 @@ class ItemStore:
             name = basename + "_%d" % i
             i += 1
 
-        os.mkdir(name)
+        try:
+            os.mkdir(name)
 
-        for item in self.items:
-            full_path = os.path.join(name, str(item['volume']), str(item['xid']), str(item['path'][1:]))
-            if full_path:
-                os.makedirs(full_path, exist_ok=True)
-            file_path = os.path.join(full_path, item['name'])
-            if item['type'] == 'folder':
-                os.makedirs(file_path, exist_ok=True)
-            else:
-                with open(file_path, 'bw+') as file_io:
-                    remaining = (item['size'] or 0)
-                    for extent in item['extents']:
-                        for block_part in range(int(extent['length'] / blocksize)):
-                            data = block.get_block(extent['start'] + block_part, blocksize, image_file_io)
-                            if remaining < blocksize:
-                                chunk_size = remaining
-                            else:
-                                chunk_size = blocksize
-                            remaining -= chunk_size
-                            file_io.write(data[:chunk_size])
+            for item in self.items:
+                full_path = os.path.join(name, str(item['volume']), str(item['xid']), str(item['path'][1:]))
+                if full_path:
+                    os.makedirs(full_path, exist_ok=True)
+                file_path = os.path.join(full_path, item['name'])
+                if item['type'] == 'folder':
+                    os.makedirs(file_path, exist_ok=True)
+                else:
+                    with open(file_path, 'bw+') as file_io:
+                        remaining = (item['size'] or 0)
+                        for extent in item['extents']:
+                            for block_part in range(int(extent['length'] / blocksize)):
+                                data = block.get_block(extent['start'] + block_part, blocksize, image_file_io)
+                                if remaining < blocksize:
+                                    chunk_size = remaining
+                                else:
+                                    chunk_size = blocksize
+                                remaining -= chunk_size
+                                file_io.write(data[:chunk_size])
+        except Exception as err:
+            LOGGER.warning('Could not save %s: %s', name, err)
 
     def save_bodyfile(self, name):
         # add suffix if file exists
