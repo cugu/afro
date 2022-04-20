@@ -1,3 +1,7 @@
+> ## This project is not maintained any more. 
+> 
+> Feel free to fork it. If you have an active fork and you want to be linked here you can [contact me](https://twitter.com/jonas_plum).
+
 <img src="logo/afro.png" alt="afro logo" align="left">
 
 # afro (APFS file recovery) [![Build Status](https://travis-ci.org/cugu/afro.svg?branch=master)](https://travis-ci.org/cugu/afro)
